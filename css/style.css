@@ -3,10 +3,16 @@
     src: url("css/fonts/JosefinSans-Bold.ttf");
 }
 
+body{
+    overflow: hidden;
+}
+
 @font-face {
     font-family: "AmaticSC";
     src: url("css/fonts/AmaticSC-Regular.ttf");
 }
+
+
 
 .video-container {
     position: absolute;
@@ -22,15 +28,15 @@
     min-height: 100%;
 
     width: auto;
-    height: auto
+    height: auto;
 
     position:absolute;
 }
 
 .content {
-    position: fixed;
-    bottom: 37%;
-    left: 33%;
+    position: absolute;
+    top: 37%;
+    left: 35%;
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
     width: 25%;
