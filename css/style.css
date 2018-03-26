@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Josefin Sans";
+    src: url("css/fonts/JosefinSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: "AmaticSC";
+    src: url("css/fonts/AmaticSC-Regular.ttf");
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.video-container video {
+    min-width: 100%;
+    min-height: 100%;
+
+    width: auto;
+    height: auto
+
+    position:absolute;
+}
+
+.content {
+    position: fixed;
+    bottom: 37%;
+    left: 33%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 25%;
+    padding: 20px;
+    text-align: center;
+}
+#title {
+    font-size: 45px;
+    font-stretch: ultra-expanded;
+    font-family: "AmaticSC";
+}
+
+#slogan {
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serit;
+}
+
+#names {
+    font-size: 10px;
+    font-family: 'Josefin Sans', sans-serit;
+}
+
