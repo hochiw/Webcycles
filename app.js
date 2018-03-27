@@ -1,5 +1,4 @@
 var express = require('express');
-var db = require("./models/db.js");
 var app = express();
 
 app.use(express.static(__dirname));
