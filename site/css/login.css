@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Josefin Sans";
-    src: url("css/fonts/JosefinSans-Bold.ttf");
+    src: url("content/fonts/JosefinSans-Bold.ttf");
 }
 
 body{
@@ -9,7 +9,7 @@ body{
 
 @font-face {
     font-family: "AmaticSC";
-    src: url("css/fonts/AmaticSC-Regular.ttf");
+    src: url("content/fonts/AmaticSC-Regular.ttf");
 }
 
 

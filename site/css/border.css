@@ -1,0 +1,103 @@
+@font-face {
+    font-family: "Josefin Sans";
+    src: url("content/fonts/JosefinSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: "AmaticSC";
+    src: url("content/fonts/AmaticSC-Regular.ttf");
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+            "logo leaderboard"
+            "sidebar content";
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 175px auto;
+    min-height: 50vh;
+    padding:10px;
+
+}
+.box {
+    border-radius: 10px;
+}
+
+.logo {
+    grid-area: logo;
+    background-image: url("content/resources/logo.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.leaderboard-banner {
+    grid-area: leaderboard;
+    background-image: url("content/resources/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    padding: 20px;
+    display: grid;
+    grid-row-gap: 25px;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3,26%);
+    grid-template-areas:
+            "Gamebtn"
+            "Blogbtn"
+            "Accountbtn";
+    background:skyblue;
+}
+
+.btn {
+    display:block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+    height:100%;
+}
+
+a,a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: white;
+}
+
+.btn:hover .overlay{
+    animation: fadeEffect 1s forwards;
+}
+
+.overlay {
+    opacity: 0;
+    background: #89CEEA;
+    height:100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'AmaticSC', sans-serit;
+    font-size: 130px;
+}
+
+.Game {
+    grid-area: Gamebtn;
+    background-image: url("content/resources/game.jpg");
+}
+.Blog{
+    grid-area: Blogbtn;
+    background-image: url("content/resources/blog.jpg");
+}
+.Account{
+    grid-area: Accountbtn;
+    background-image: url("content/resources/account.jpg");
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+

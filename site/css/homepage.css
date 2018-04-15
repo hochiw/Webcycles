@@ -1,0 +1,121 @@
+body {
+    font-family: 'Josefin Sans', sans-serit;
+    overflow:hidden;
+}
+
+.content {
+    padding: 20px;
+    grid-area: content;
+    background: #fdfef0;
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-columns: repeat(11,1fr);
+    grid-template-rows: repeat(5,1fr);
+}
+
+.greeting {
+    grid-column:1 / 12;
+    text-align:center;
+    font-family: 'AmaticSC', sans-serit;
+    font-size: 50px;
+
+}
+
+.leaderboard {
+    grid-column: 2 / 6;
+    grid-row: 2 / 5;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    display:grid;
+    grid-template-rows: 41px 1fr;
+}
+
+.leaderboardTab {
+    grid-row: 2;
+    display: none;
+    padding: 12px 12px;
+    grid-template-columns: 100%;
+    grid-template-rows: 15% repeat(5,1fr);
+    text-align: center;
+    animation: fadeEffect 1s;
+    grid-row-gap: 5px;
+}
+
+.tabs {
+    grid-row:1/2;
+}
+
+
+.tabs button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tabs button:hover {
+    background-color: #ddd;
+}
+
+.tabs button.active {
+    background-color: #ccc;
+}
+
+.leaderboardTab > * {
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.leaderboardTab > *:not(.description) {
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+
+
+
+.video {
+    grid-column: 7 / 11;
+    grid-row: 2 / 4;
+    border: 1px solid #ccc;
+    display: grid;
+    padding: 13px;
+    grid-row-gap:10px;
+    grid-template-columns: 100%;
+    grid-template-rows: 2fr 1fr;
+    overflow:hidden;
+    grid-template-areas:
+            "video-container"
+            "video-des";
+}
+
+
+
+.video-container {
+    grid-area: video-container;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+    text-align: center;
+
+}
+
+.video-container video {
+    max-width: 100%;
+    max-height: 100%;
+    margin:0 auto;
+    position:relative;
+    border-radius: 15px;
+}
+.video-des {
+    grid-area:video-des;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    width:100%;
+    word-wrap: break-word;
+
+}
