@@ -18,3 +18,9 @@ function showLeaderboard(event, type) {
     document.getElementById(type).style.display = "grid";
     event.currentTarget.className += " active";
 }
+
+document.getElementById("Default").click();
+var token = new URL(document.location.href).searchParams.get("token")
+if (token) {
+    document.getElementById('greeting').innerHTML = "Welcome back, " + atob(token);
+}

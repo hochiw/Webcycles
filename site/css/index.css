@@ -35,46 +35,39 @@ body{
 
 .content {
     position: absolute;
-    top: 37vh;
-    left: 35vw;
+    top: 37%;
+    left: 35%;
     background: rgba(0, 0, 0, 0.3);
     color: #f1f1f1;
     width: 25%;
     padding: 20px;
     text-align: center;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr auto;
-    grid-row-gap: 10px;
+    animation: float 6s ease-in-out infinite;
 }
-
-.submit {
-    width:10vw !important;
-    font-size:20px;
-    background-color: #89CEEA;
-}
-
-.errorMsg {
-    color:red;
-}
-
-.content input {
-    border-radius: 10px;
-    padding: 15px;
-    width: 20vw;
-    border: 0;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-    font-family: "Josefin Sans";
-
-}
-
-
-
-.title {
+#title {
     font-size: 45px;
     font-stretch: ultra-expanded;
     font-family: "AmaticSC";
 }
 
+#slogan {
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serit;
+}
 
+#names {
+    font-size: 10px;
+    font-family: 'Josefin Sans', sans-serit;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-20px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
