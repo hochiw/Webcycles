@@ -15,10 +15,8 @@
             "logo leaderboard"
             "sidebar content";
     grid-template-columns: 25% 75%;
-    grid-template-rows: 175px auto;
+    grid-template-rows: 100px 700px;
     min-height: 50vh;
-    padding:10px;
-
 }
 .box {
     border-radius: 10px;
@@ -40,11 +38,11 @@
 
 .sidebar {
     grid-area: sidebar;
-    padding: 10px;
+    padding: 20px;
     display: grid;
-    grid-row-gap: 15px;
+    grid-row-gap: 25px;
     grid-template-columns: 100%;
-    grid-template-rows: repeat(4,14%);
+    grid-template-rows: repeat(4,17%);
     grid-template-areas:
             "Gamebtn"
             "Blogbtn"
