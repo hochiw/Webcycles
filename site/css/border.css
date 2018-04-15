@@ -15,7 +15,7 @@
             "logo leaderboard"
             "sidebar content";
     grid-template-columns: 25% 75%;
-    grid-template-rows: 100px 700px;
+    grid-template-rows: 100px 80vh;
     min-height: 50vh;
 }
 .box {
@@ -42,13 +42,15 @@
     display: grid;
     grid-row-gap: 25px;
     grid-template-columns: 100%;
-    grid-template-rows: repeat(4,17%);
+    grid-template-rows: repeat(3,23vh);
     grid-template-areas:
             "Gamebtn"
             "Blogbtn"
             "Accountbtn"
             "Settingbtn";
     background: skyblue;
+    min-height:70vh;
+    max-height:80vh;
 }
 
 .btn {
@@ -94,10 +96,6 @@ a,a:hover, a:visited, a:link, a:active
 .Account{
     grid-area: Accountbtn;
     background-image: url("content/resources/account.jpg");
-}
-.Setting {
-    grid-area: Settingbtn;
-    background-image: url("content/resources/setting.jpg");
 }
 
 @keyframes fadeEffect {

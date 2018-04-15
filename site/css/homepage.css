@@ -10,7 +10,7 @@ body {
     display: grid;
     grid-row-gap: 10px;
     grid-template-columns: repeat(11,1fr);
-    grid-template-rows: repeat(10,minmax(1em,200px));
+    grid-template-rows: repeat(10,minmax(1em,70vh));
 }
 
 .greeting {
@@ -23,7 +23,7 @@ body {
 
 .leaderboard {
     grid-column: 2 / 6;
-    grid-row: 3 / 9;
+    grid-row: 3 / span 8;
     overflow: hidden;
     border: 1px solid #ccc;
     display:grid;
@@ -78,7 +78,7 @@ body {
 
 .video {
     grid-column: 7 / 11;
-    grid-row: 3 / 6;
+    grid-row: 3 / span 4;
     border: 1px solid #ccc;
     display: grid;
     padding: 13px;
