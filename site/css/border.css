@@ -40,25 +40,27 @@
 
 .sidebar {
     grid-area: sidebar;
-    padding: 20px;
+    padding: 10px;
     display: grid;
-    grid-row-gap: 25px;
+    grid-row-gap: 15px;
     grid-template-columns: 100%;
-    grid-template-rows: repeat(3,26%);
+    grid-template-rows: repeat(4,20%);
     grid-template-areas:
             "Gamebtn"
             "Blogbtn"
-            "Accountbtn";
-    background:skyblue;
+            "Accountbtn"
+            "Settingbtn";
+    background: skyblue;
 }
 
 .btn {
     display: inline-block;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 70%;
     width:100%;
     height:100%;
     background-position: 50% 50%;
+    background-color:#fdfef0;
 }
 
 a,a:hover, a:visited, a:link, a:active
@@ -94,6 +96,10 @@ a,a:hover, a:visited, a:link, a:active
 .Account{
     grid-area: Accountbtn;
     background-image: url("content/resources/account.jpg");
+}
+.Setting {
+    grid-area: Settingbtn;
+    background-image: url("content/resources/setting.jpg");
 }
 
 @keyframes fadeEffect {
