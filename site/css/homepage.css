@@ -10,7 +10,7 @@ body {
     display: grid;
     grid-row-gap: 10px;
     grid-template-columns: repeat(11,1fr);
-    grid-template-rows: repeat(10,1em,200px);
+    grid-template-rows: repeat(10,minmax(1em,200px));
 }
 
 .greeting {
