@@ -44,7 +44,7 @@
     display: grid;
     grid-row-gap: 15px;
     grid-template-columns: 100%;
-    grid-template-rows: repeat(4,20%);
+    grid-template-rows: repeat(4,14%);
     grid-template-areas:
             "Gamebtn"
             "Blogbtn"
