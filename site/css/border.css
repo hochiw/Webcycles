@@ -26,7 +26,8 @@
     grid-area: logo;
     background-image: url("content/resources/logo.jpg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 70%;
+    background-position: 50% 50%;
 }
 
 .leaderboard-banner {
