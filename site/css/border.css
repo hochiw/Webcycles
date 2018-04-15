@@ -14,8 +14,8 @@
     grid-template-areas:
             "logo leaderboard"
             "sidebar content";
-    grid-template-columns: 25% 75%;
-    grid-template-rows: 100px 80vh;
+    grid-template-columns: 25vw 75vw;
+    grid-template-rows: 15vh 80vh;
     min-height: 50vh;
 }
 .box {
@@ -26,7 +26,7 @@
     grid-area: logo;
     background-image: url("content/resources/logo.jpg");
     background-repeat: no-repeat;
-    background-size: 70%;
+    background-size: 35vh;
     background-position: 50% 50%;
 }
 
