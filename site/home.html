@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Webcycles</title>
-    <link rel="stylesheet" type="text/css" href="/site/css/border.css">
-    <link rel="stylesheet" type="text/css" href="/site/css/homepage.css">
+    <link rel="stylesheet" type="text/css" href="site/css/border.css">
+    <link rel="stylesheet" type="text/css" href="site/css/homepage.css">
 </head>
 <body>
 
@@ -21,9 +21,45 @@
         <a href="/" class="btn Account">
             <div class="overlay">Account</div>
         </a>
+
+
+    </div>
+    <div class="box content">
+        <h1 id="greeting" class="box greeting">Welcome back, User</h1>
+        <div class="box leaderboard">
+            <div class="tabs">
+                <button class="tab-btn" onclick="showLeaderboard(event, 'Global')" id="Default">Global</button>
+                <button class="tab-btn" onclick="showLeaderboard(event, 'Friends')">Friends</button>
+            </div>
+            <div id="Friends" class="leaderboardTab">
+                <div class="description"><h3>Rank</h3> <h3>Name</h3> <h3>Points</h3></div>
+                <div class="rank1"><p>1</p> <p>Tom</p> <p>500</p></div>
+                <div class="rank2"><p>2</p> <p>Sam</p> <p>400</p></div>
+                <div class="rank3"><p>3</p> <p>Kelvin</p> <p>200</p></div>
+                <div class="rank4"><p>4</p> <p>Jeff</p> <p>100</p></div>
+                <div class="rank5"><p>5</p> <p>Amy</p> <p>50</p></div>
+            </div>
+            <div id="Global" class="leaderboardTab">
+                <div class="description"><h3>Rank</h3> <h3>Name</h3> <h3>Points</h3></div>
+                <div class="rank1"><p>1</p> <p>Bob</p> <p>500</p></div>
+                <div class="rank2"><p>2</p> <p>Jeremy</p> <p>400</p></div>
+                <div class="rank3"><p>3</p> <p>Michael</p> <p>200</p></div>
+                <div class="rank4"><p>4</p> <p>Rin</p> <p>100</p></div>
+                <div class="rank5"><p>5</p> <p>Astolfo</p> <p>50</p></div>
+            </div>
+        </div>
+
+        <div class="box video">
+            <div class="video-container">
+                <video autoplay muted loop id="video">
+                    <source src="site/css/content/resources/video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-des">A slideshow description</div>
+        </div>
     </div>
 </div>
 
 </body>
-<script src="/site/js/home.js"></script>
+<script src="site/js/home.js"></script>
 </html>
