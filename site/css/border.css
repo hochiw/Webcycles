@@ -71,7 +71,7 @@ a,a:hover, a:visited, a:link, a:active
 }
 
 .btn:hover .overlay{
-    animation: fadeEffect 1s forwards;
+    opacity: 1;
 }
 
 .overlay {
@@ -83,7 +83,7 @@ a,a:hover, a:visited, a:link, a:active
     justify-content: center;
     align-items: center;
     font-family: 'AmaticSC', sans-serit;
-    font-size: 130px;
+    font-size: 100px;
 }
 
 .Game {
@@ -97,11 +97,6 @@ a,a:hover, a:visited, a:link, a:active
 .Account{
     grid-area: Accountbtn;
     background-image: url("content/resources/account.jpg");
-}
-
-@keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
 }
 
 
