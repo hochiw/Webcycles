@@ -77,6 +77,15 @@ app.get("/settings/changeemail", function(req,res) {
     }
 });
 
+app.get("/settings/changepostal", function(req,res) {
+    if (req.cookies['token']) {
+        res.sendFile(__dirname + '/site/changepostal.html');
+    } else {
+        res.redirect("/login");
+    }
+});
+
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`App listening to port ${ PORT }`);
