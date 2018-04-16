@@ -45,6 +45,10 @@ app.get("/login", function(req,res) {
 
 });
 
+app.get("/settings", function(req,res) {
+        res.sendFile(__dirname + '/site/settings.html');
+});
+
 
 
 const PORT = process.env.PORT || 4000;
