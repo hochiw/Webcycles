@@ -8,6 +8,10 @@
     src: url("content/fonts/AmaticSC-Regular.ttf");
 }
 
+html,body {
+    height:100%;
+}
+
 .wrapper {
     display: grid;
     grid-gap: 20px;
