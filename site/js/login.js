@@ -20,18 +20,34 @@ function errorGen(type) {
     error.appendChild(errorText);
 
     var appendElement = document.getElementById("loginForm");
-    document.getE
     var child;
 
-    if (type == "username") {
-        child = document.getElementById("password");
+    if (type == "LUser") {
+        child = document.getElementById("LPass");
     }
-    else if (type == "password") {
-        child = document.getElementById("submit");
+    else if (type == "LPass") {
+        child = document.getElementById("Lsubmit");
     }
     else {
         return false;
     }
     console.log(child);
     appendElement.insertBefore(error,child);
+}
+
+function displayLoginform() {
+    document.getElementById("btnContainer").className = "hidden";
+    document.getElementById("loginForm").className = "show";
+
+}
+
+function displayRegistrationform() {
+    document.getElementById("btnContainer").className = "hidden";
+    document.getElementById("registrationForm").className = "show";
+}
+
+function displayChoicebtn() {
+    document.getElementById("btnContainer").className = "show";
+    document.getElementById("registrationForm").className = "hidden";
+    document.getElementById("loginForm").className = "hidden";
 }

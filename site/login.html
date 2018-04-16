@@ -13,11 +13,25 @@
 </div>
 
 <div class="content">
+
     <div class="title">Webcycles</div>
-    <form id="loginForm" onsubmit="return checkInfo()" action="/login" method="post">
-    <input id="username" class="form username" type="text" name="username" maxlength="20" value placeholder="Username"><br>
-    <input id="password" class="form password" type="password" name="password" value placeholder="Password"><br>
-        <input id="submit" class="form submit" type="submit" value="Login">
+    <div id="btnContainer">
+        <button onclick="displayLoginform()" id="login">Login</button>
+        <button onclick="displayRegistrationform()" id="register">Register</button>
+    </div>
+        <form id="loginForm" onsubmit="return checkInfo()" action="/login" method="post">
+            <input id="LUser" class="form username" type="text" name="username" maxlength="20" value placeholder="Username"><br>
+            <input id="LPass" class="form password" type="password" name="password" value placeholder="Password"><br>
+            <input id="Lback" class="form back" type="button" onclick="displayChoicebtn()" value="Back">
+            <input id="Lsubmit" class="form submit" type="submit" value="Login">
+        </form>
+    <form id="registrationForm" onsubmit="alert('Not yet');return false" action="/register" method="post">
+        <input id="RUser" class="form username" type="text" name="username" maxlength="20" value placeholder="Username"><br>
+        <input id="REmail" class="form email" type="email" name="email" value placeholder="Email"><br>
+        <input id="RPass" class="form password" type="password" name="password" value placeholder="Password">
+        <input id="RPassR" class="form password-repeat" type="password" name="password-repeat" value placeholder="Repeat Password"><br>
+        <input id="Rback" class="form back" type="button" onclick="displayChoicebtn()" value="Back">
+        <input id="Rsubmit" class="form submit" type="submit" value="Register">
     </form>
 </div>
 

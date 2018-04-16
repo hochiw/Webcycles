@@ -48,17 +48,28 @@ body{
     grid-row-gap: 10px;
 }
 
-.submit {
+.submit,.back {
     width:10vw !important;
     font-size:20px;
     background-color: #89CEEA;
+}
+
+#login, #register {
+    width:10vw !important;
+    height: 7vh;
+    font-size:20px;
+    background-color: #89CEEA;
+    position:relative;
+    top:1vh;
+    margin: 0 10px;
 }
 
 .errorMsg {
     color:red;
 }
 
-.content input {
+
+.content input,#btnContainer button {
     border-radius: 10px;
     padding: 15px;
     width: 20vw;
@@ -66,15 +77,30 @@ body{
     box-sizing: border-box;
     margin-bottom: 15px;
     font-family: "Josefin Sans";
-
 }
-
 
 
 .title {
     font-size: 45px;
     font-stretch: ultra-expanded;
     font-family: "AmaticSC";
+}
+#loginForm, #registrationForm {
+    opacity: 0;
+    display:none;
+
+
+}
+#loginForm.show, #registrationForm.show {
+    opacity: 1;
+    display:block;
+}
+
+
+
+#btnContainer.hidden {
+    display:none;
+
 }
 
 
