@@ -53,9 +53,17 @@ app.get("/settings", function(req,res) {
     }
 });
 
-app.get("/changeusername", function(req,res) {
+app.get("/settings/changeusername", function(req,res) {
     if (req.cookies['token']) {
         res.sendFile(__dirname + '/site/changeusername.html');
+    } else {
+        res.redirect("/login");
+    }
+});
+
+app.get("/settings/changepassword", function(req,res) {
+    if (req.cookies['token']) {
+        res.sendFile(__dirname + '/site/changepassword.html');
     } else {
         res.redirect("/login");
     }
