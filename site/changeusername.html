@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Username</title>
+    <link rel="stylesheet" type="text/css" href="css/border.css">
+    <link rel="stylesheet" type="text/css" href="css/Settings.css">
+    <link rel="stylesheet" type="text/css" href="css/changeusername.css">
+</head>
+<body onload="dispUsername()">
+
+<div class="wrapper">
+    <a href="home.html" class="box logo"></a>
+    <div class="box leaderboard-banner"></div>
+    <div class="box sidebar">
+        <a href="/" class="btn Game">
+            <div class="overlay">Game</div>
+        </a>
+        <a href="/" class="btn Blog">
+            <div class="overlay">Blog</div>
+        </a>
+        <a href="/" class="btn Account">
+            <div class="overlay">Account</div>
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="text">
+            <h1>Change Username</h1>
+            <h2>Current Username: </h2>
+            <p id="username"></p><br>
+        </div>
+        <br>
+        <form>
+            <h2>New Username:  </h2>
+            <input type="text" id="newUsername" required/><br><br>
+            <input type="submit" onClick="return changeUsername()"/>
+            <button id="cancel" onClick="location.href ='settings.html'">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    var name = "swaseem";
+    function changeUsername() {
+        if( name = document.getElementById("newUsername").value == "") {
+            alert("Please add new username");
+            return false;
+        }
+
+        name = document.getElementById("newUsername").value;
+        document.getElementById("newUsername").value = "";
+        document.getElementById("username").textContent = name;
+        return false;
+
+    }
+
+    function dispUsername() {
+        document.getElementById('username').textContent = name;
+    }
+</script>
+</body>
+</html>
