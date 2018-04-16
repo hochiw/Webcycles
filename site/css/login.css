@@ -3,15 +3,23 @@
     src: url("content/fonts/JosefinSans-Bold.ttf");
 }
 
-body{
-    overflow: hidden;
-}
+
 
 @font-face {
     font-family: "AmaticSC";
     src: url("content/fonts/AmaticSC-Regular.ttf");
 }
 
+html, body{
+    height:100%;
+}
+
+body {
+    overflow:hidden;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 .video-container {
@@ -34,9 +42,7 @@ body{
 }
 
 .content {
-    position: absolute;
-    top: 37vh;
-    left: 35vw;
+    position: relative;
     background: rgba(0, 0, 0, 0.3);
     color: #f1f1f1;
     width: 25%;
@@ -77,6 +83,7 @@ body{
     box-sizing: border-box;
     margin-bottom: 15px;
     font-family: "Josefin Sans";
+    margin: 10px 10px 10px 10px;
 }
 
 
