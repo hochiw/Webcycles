@@ -21,7 +21,7 @@ body {
     grid-row-gap: 0px;
 }
 
-button, input[type="submit"] {
+button, input[type="submit"], input[type="button"] {
     display:block;
     margin:auto;
     border-radius: 10px;
