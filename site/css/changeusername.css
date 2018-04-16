@@ -26,7 +26,7 @@ form h2, form input[type="text"] {
     display:inline;
 }
 
-#newUsername {
+#newUsername, .changePassword {
     font-size: 15px;
     border-radius:10px 10px;
     width: 25vw;
