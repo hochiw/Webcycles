@@ -23,9 +23,29 @@
     float:left;
 }
 
-#confirmSearch {
-    width:3%;
-    height:1px;
-    position:absolute;
-    margin:0 88px;
+#userTable {
+    grid-row:3/span 7;
+    grid-column: 2/span 9;
+}
+
+img {
+    display: block;
+}
+
+table {
+    background:rgba(0,0,0,0.3);
+    border:1px solid;
+}
+
+table td {
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+tr {
+    cursor:pointer;
+}
+
+tr:hover {
+    background:rgba(0,0,0,0.5);
 }
