@@ -19,5 +19,5 @@ function showLeaderboard(event, type) {
 document.getElementById("Default").click();
 var token = new URL(document.location.href).searchParams.get("token")
 if (token) {
-    document.getElementById('greeting').innerHTML = "Welcome back, " + atob(token);
+    document.getElementById('greeting-name').innerHTML = atob(token);
 }

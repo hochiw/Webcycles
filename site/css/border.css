@@ -12,6 +12,12 @@ html,body {
     height:100%;
 }
 
+body {
+    font-family: 'Josefin Sans', sans-serit;
+    overflow:hidden;
+    background-color:#FDFEF1;
+}
+
 .wrapper {
     display: grid;
     grid-gap: 20px;
@@ -26,12 +32,25 @@ html,body {
     border-radius: 10px;
 }
 
+.content {
+    grid-area: content;
+    background: #fdfef0;
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-columns: repeat(11,1fr);
+    grid-template-rows: repeat(10,minmax(1em,70vh));
+}
+
 .logo {
     grid-area: logo;
     background-image: url("content/resources/logo.jpg");
     background-repeat: no-repeat;
     background-size: 35vh;
     background-position: 50% 50%;
+}
+
+.logo:hover {
+    transform:scale(1.2);
 }
 
 .leaderboard-banner {
@@ -101,5 +120,11 @@ a,a:hover, a:visited, a:link, a:active
 .Account{
     grid-area: Accountbtn;
     background-image: url("content/resources/account.jpg");
+}
+
+.flex {
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 

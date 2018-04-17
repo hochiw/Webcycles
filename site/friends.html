@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webcycles</title>
+    <link rel="stylesheet" type="text/css" href="../site/css/border.css">
+    <link rel="stylesheet" type="text/css" href="../site/css/friends.css">
+    <link rel="stylesheet" type="text/css" href="../site/css/charities.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <a href="/home" class="box logo"></a>
+    <div class="box leaderboard-banner"></div>
+    <div class="box sidebar">
+        <a href="/game" class="btn Game">
+            <div class="overlay">Game</div>
+        </a>
+        <a href="/" class="btn Blog">
+            <div class="overlay">Blog</div>
+        </a>
+        <a href="/settings" class="btn Account">
+            <div class="overlay">Account</div>
+        </a>
+
+
+    </div>
+
+    <div class="box content">
+        <a href="/game" id="backarrow"></a>
+        <div class="flex">
+            <p>Friends List</p>
+        </div>
+
+        <form class="flex" id="searchContainer" onsubmit="window.location.href = '/user'; return false;">
+            <input type="text" id="searchBox" placeholder="Search for user">
+            <input type="submit" style="visibility: hidden;" />
+        </form>
+        <table id="userTable">
+            <tr onclick="window.location='/user';">
+                <td width="20%">
+                    <img align="center" width="100%" src="../site/css/content/resources/user1.png">
+                </td>
+                <td width="80%">Alfreds</td>
+            </tr>
+            <tr onclick="window.location='/user';">
+                <td>
+                    <img align="center" width="100%" src="../site/css/content/resources/user2.png">
+                </td>
+                <td>Tom</td>
+            </tr>
+            <tr onclick="window.location='/user';">
+                <td>
+                    <img align="center" width="100%" src="../site/css/content/resources/user3.png">
+                </td>
+                <td>Marco</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

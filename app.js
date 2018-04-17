@@ -85,6 +85,54 @@ app.get("/settings/changepostal", function(req,res) {
     }
 });
 
+app.get("/game", function(req,res) {
+    if (req.cookies['token']) {
+        res.sendFile(__dirname + '/site/game.html');
+    } else {
+        res.redirect("/login");
+    }
+});
+
+app.get("/game/charities", function(req,res) {
+    if (req.cookies['token']) {
+        res.sendFile(__dirname + '/site/charities.html');
+    } else {
+        res.redirect("/login");
+    }
+});
+
+app.get("/game/recycling", function(req,res) {
+    if (req.cookies['token']) {
+        res.sendFile(__dirname + '/site/recycling.html');
+    } else {
+        res.redirect("/login");
+    }
+});
+
+app.get("/game/playerscore", function(req,res) {
+    if (req.cookies['token']) {
+        res.sendFile(__dirname + '/site/playerscore.html');
+    } else {
+        res.redirect("/login");
+    }
+});
+
+app.get("/game/friends", function(req,res) {
+    if (req.cookies['token']) {
+        res.sendFile(__dirname + '/site/friends.html');
+    } else {
+        res.redirect("/login");
+    }
+});
+
+app.get("/user", function(req,res) {
+    if (req.cookies['token']) {
+        res.sendFile(__dirname + '/site/user.html');
+    } else {
+        res.redirect("/login");
+    }
+});
+
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {

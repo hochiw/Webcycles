@@ -1,0 +1,44 @@
+#btn-playerscore {
+    grid-row: 2/5;
+    grid-column: 2/5;
+    font-size: 50px;
+}
+
+#btn-recycling {
+    grid-row: 2/5;
+    grid-column: 8/11;
+}
+
+#btn-charities {
+    grid-row: 7/10;
+    grid-column: 2/5;
+    font-size: 70px;
+}
+
+#btn-friends {
+    grid-row: 7/10;
+    grid-column: 8/11;
+}
+
+#circle-container {
+    grid-row:5/7;
+    grid-column:5/8;
+}
+
+#circle {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 5vw;
+    background: rgba(60, 157, 164,0.5);
+    border: 1px solid;
+}
+
+.gamebtn {
+    background:#86ceec;
+    border-radius:1vw;
+    font-family: 'AmaticSC', sans-serit;
+    font-size: 80px;
+}
+.gamebtn:hover {
+    transform:scale(1.2);
+}

@@ -1,0 +1,75 @@
+#backarrow {
+    background-image: url("content/resources/back.png");
+    grid-row: 1;
+    grid-column: 1;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.theme {
+    grid-column: 2/11;
+    grid-row: 2/4;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.charities {
+    grid-column: 2/11;
+    grid-row: 4/11;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 100%;
+}
+
+.charityDetails {
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 4fr repeat(3,1fr);
+    border:1px solid;
+    border-radius: 2vw;
+    text-align: center;
+    padding:20px;
+}
+
+.imgContainer {
+    height:100%;
+    width:100%;
+}
+
+.imgContainer .image {
+    height:80%;
+    width:65%;
+    border-radius: 60vw;
+    background-position: 50% 50%;
+    background-size:cover;
+}
+
+#image1 {
+    background-image: url("content/resources/charitySample.jpg");
+}
+
+#image2 {
+    background-image:url("content/resources/charitySample.jpg");
+}
+
+#image3 {
+    background-image:url("content/resources/charitySample.jpg");
+}
+
+.btnContainer{
+    height:100%;
+    width:100%;
+}
+
+.charityMore {
+    background:#86ceec;
+    border-radius:1vw;
+    padding:15px;
+    width: 10vw;
+    color:whitesmoke !important;
+}
+
+.charityMore:hover {
+    background:#1bb0ef;
+}
+
