@@ -125,6 +125,14 @@ app.get("/game/friends", function(req,res) {
     }
 });
 
+app.get("/user", function(req,res) {
+    if (req.cookies['token']) {
+        res.sendFile(__dirname + '/site/user.html');
+    } else {
+        res.redirect("/login");
+    }
+});
+
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
