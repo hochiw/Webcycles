@@ -1,7 +1,7 @@
 .greeting {
     grid-column:1 / 12;
     text-align:center;
-    font-family: 'AmaticSC', sans-serit;
+    font-family: 'AmaticSC', sans-serif;
     font-size: 50px;
 
 }
