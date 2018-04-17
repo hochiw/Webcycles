@@ -7,7 +7,7 @@ function changeEmail() {
     email = document.getElementById("newEmail").value;
     document.getElementById("newEmail").value = "";
     document.getElementById("email").textContent = email;
-    return true;
+    return false;
 }
 function dispEmail() {
     document.getElementById('email').textContent = email;
