@@ -18,5 +18,9 @@
 }
 
 .materials {
-    grid-template-rows:1fr 2fr repeat(4,1fr) ;
+    grid-template-rows:10vh 15vh repeat(4,10vh) !important;
+}
+
+.icon {
+    padding:0 !important;
 }
