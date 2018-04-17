@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Change Email Address</title>
+    <title>How Recycling Works</title>
     <link rel="stylesheet" type="text/css" href="../site/css/border.css">
     <link rel="stylesheet" type="text/css" href="../site/css/settings.css">
-    <link rel="stylesheet" type="text/css" href="../site/css/changeusername.css">
+    <link rel="stylesheet" type="text/css" href="../site/css/blogarticles.css">
 </head>
-<body onload="dispEmail()">
+<body>
 
 <div class="wrapper">
     <a href="home.html" class="box logo"></a>
@@ -25,21 +25,17 @@
     </div>
 
     <div class="content">
-        <div class="text">
-            <h1>Change Email</h1>
-            <h2>Current Email: </h2>
-            <p id="email"></p><br>
+        <div class="header">
+            <h1> How Recycling Works</h1>
+            <h2> By SciShow </h2>
         </div>
-        <br>
-        <form>
-            <h2>New Email:  </h2>
-            <input type="email" class="textFormBox" id="newEmail"/><br><br>
-            <input type="submit" onClick="return changeEmail()"/>
-            <input id="submit" type="button" onClick="location.href ='../settings'" value="Cancel" />
-        </form>
+
+        <div class="video">
+            <iframe width="854" height="480" src="https://www.youtube.com/embed/b7GMpjx2jDQ"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
     </div>
 </div>
 
-<script src="../site/js/changeEmail.js"></script>
 </body>
 </html>

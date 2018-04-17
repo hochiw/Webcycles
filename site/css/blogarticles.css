@@ -1,0 +1,20 @@
+html { overflow-y: scroll; }
+
+.content {
+    position: absolute;
+    top: 20vh;
+    left: 37vw;
+    width: 50%;
+    text-align: center;
+    display: grid;
+    padding-bottom: 10vh;
+}
+
+.pic{
+    width:75%;
+    height:50%;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}

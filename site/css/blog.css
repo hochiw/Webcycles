@@ -1,0 +1,36 @@
+#table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20vh;
+    margin-bottom:auto;
+    width :90%;
+
+}
+
+h1 {
+    font-size:45px;
+}
+#table td, #table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#table tr:nth-child(even){background-color: #f2f2f2;}
+
+#table tr:hover {background-color: #ddd;}
+
+.Name {
+    width:60%;
+}
+
+#table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #89CEEA;
+    color: white;
+}
+
