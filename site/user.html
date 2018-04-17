@@ -5,6 +5,8 @@
     <title>Webcycles</title>
     <link rel="stylesheet" type="text/css" href="../site/css/border.css">
     <link rel="stylesheet" type="text/css" href="../site/css/user.css">
+    <link rel="stylesheet" type="text/css" href="../site/css/charities.css">
+    <link rel="stylesheet" type="text/css" href="../site/css/recycling.css">
 </head>
 <body>
 
@@ -15,7 +17,7 @@
         <a href="/game" class="btn Game">
             <div class="overlay">Game</div>
         </a>
-        <a href="/" class="btn Blog">
+        <a href="/blog" class="btn Blog">
             <div class="overlay">Blog</div>
         </a>
         <a href="/settings" class="btn Account">
@@ -27,6 +29,68 @@
 
     <div class="box content">
         <a href="/game" id="backarrow"></a>
+        <div class="flex profileContainer">
+            <div id="profilePicture"></div>
+        </div>
+        <div class="btnContainer" id="addUser">
+            <button>Add User</button>
+        </div>
+        <div class="btnContainer" id="blockUser">
+            <button>Block User</button>
+        </div>
+        <div class="flex" id="playerDetails">
+            <span>Player Details</span>
+        </div>
+        <div id="infoContainer">
+            <div class="materials" id="paper">
+                <h3>Paper</h3>
+                <div class="icon" id="paperIcon"></div>
+                <div class="amount">
+                    <p>Amount</p>
+                    <span id="papAmount">200</span>
+                </div>
+                <div class="point">
+                    <p>Points</p>
+                    <span id="papPoint">180</span>
+                </div>
+            </div>
+            <div class="materials" id="metal">
+                <h3>Metal</h3>
+                <div class="icon" id="metalIcon"></div>
+                <div class="amount">
+                    <p>Amount</p>
+                    <span id="mAmount">90</span>
+                </div>
+                <div class="point">
+                    <p>Points</p>
+                    <span id="mPoint">90</span>
+                </div>
+            </div>
+            <div class="materials" id="plastic">
+                <h3>Plastic</h3>
+                <div class="icon" id="plasticIcon"></div>
+                <div class="amount">
+                    <p>Amount</p>
+                    <span id="plaAmount">101</span>
+                </div>
+                <div class="point">
+                    <p>Points</p>
+                    <span id="plaPoint">89</span>
+                </div>
+            </div>
+            <div class="materials" id="glass">
+                <h3>Glass</h3>
+                <div class="icon" id="glassIcon"></div>
+                <div class="amount">
+                    <p>Amount</p>
+                    <span id="gAmount">130</span>
+                </div>
+                <div class="point">
+                    <p>Points</p>
+                    <span id="gPoint">305</span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
