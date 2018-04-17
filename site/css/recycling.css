@@ -1,0 +1,103 @@
+#backarrow {
+    background-image: url("content/resources/back.png");
+    grid-row: 1;
+    grid-column: 1;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+#infoContainer {
+    grid-row: 2/9;
+    grid-column: 2/11;
+    border: 1px solid;
+    border-radius: 1vw;
+    padding:10px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 100%;
+}
+
+.materials {
+    border-right: 1px solid;
+    display:grid;
+    grid-template-rows: 1fr 2fr 1fr 1fr 1fr;
+    grid-template-columns: 100%;
+    text-align: center;
+    margin:0 -10px;
+}
+
+#glass {
+    border-right:0;
+}
+
+.icon {
+    border-top:1px solid;
+    border-bottom:1px solid;
+    padding:100px;
+    background-size:contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+#paperIcon {
+    background-image: url("https://vignette.wikia.nocookie.net/animal-jam-clans-1/images/1/1e/Insert-picture-here.jpg/revision/latest?cb=20161231005211");
+}
+
+#metalIcon {
+    background-image: url("https://vignette.wikia.nocookie.net/animal-jam-clans-1/images/1/1e/Insert-picture-here.jpg/revision/latest?cb=20161231005211");
+}
+
+#plasticIcon {
+    background-image: url("https://vignette.wikia.nocookie.net/animal-jam-clans-1/images/1/1e/Insert-picture-here.jpg/revision/latest?cb=20161231005211");
+}
+
+#glassIcon {
+    background-image: url("https://vignette.wikia.nocookie.net/animal-jam-clans-1/images/1/1e/Insert-picture-here.jpg/revision/latest?cb=20161231005211");
+}
+
+.slidecontainer button {
+    border-radius: 10px;
+}
+
+.slider {
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.convert-value {
+    width:50px;
+    text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.convertContainer {
+    grid-column: 5/8;
+    grid-row: 9/10;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#convertBtnContainer {
+    grid-column: 5/8;
+    grid-row: 10;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#convertBtn {
+
+    background:#89CEEA;
+    color:black !important;
+    width:80%;
+    border-radius: 10px;
+    text-align: center;
+}

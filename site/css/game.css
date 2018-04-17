@@ -1,9 +1,10 @@
 #btn-playerscore {
     grid-row: 2/5;
     grid-column: 2/5;
+    font-size: 50px;
 }
 
-#btn-recycle {
+#btn-recycling {
     grid-row: 2/5;
     grid-column: 8/11;
 }
@@ -11,6 +12,7 @@
 #btn-charities {
     grid-row: 7/10;
     grid-column: 2/5;
+    font-size: 70px;
 }
 
 #btn-friends {

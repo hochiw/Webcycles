@@ -1,3 +1,11 @@
+#backarrow {
+    background-image: url("content/resources/back.png");
+    grid-row: 1;
+    grid-column: 1;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
 .theme {
     grid-column: 2/11;
     grid-row: 2/4;
