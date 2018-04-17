@@ -1,0 +1,22 @@
+.charityInfo{
+    grid-row: 2/ span 5;
+    grid-column: 2/ span 3;
+    display:grid;
+    grid-template-columns:100%;
+    grid-template-rows:2fr 1fr;
+
+}
+
+.charityInfo .image {
+    background-image: url("content/resources/charitySample.jpg");
+    width:50% !important;
+}
+
+#infoContainer {
+    grid-column: 5/span 6 !important;
+    grid-row: 2/ span 6 !important;
+}
+
+.materials {
+    grid-template-rows:1fr 2fr repeat(4,1fr) ;
+}

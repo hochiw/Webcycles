@@ -52,15 +52,15 @@
 }
 
 #image1 {
-    background-image: url("https://media.mnn.com/assets/images/2016/12/give-to-charity.jpg.653x0_q80_crop-smart.jpg");
+    background-image: url("content/resources/charitySample.jpg");
 }
 
 #image2 {
-    background-image:url("https://www.marriagegeek.com/wp-content/uploads/2017/12/charity.jpg");
+    background-image:url("content/resources/charitySample.jpg");
 }
 
 #image3 {
-    background-image:url("https://steemitimages.com/0x0/https://us.123rf.com/450wm/dizanna/dizanna1509/dizanna150900687/45708776-charity-word-cloud-heart-concept.jpg");
+    background-image:url("content/resources/charitySample.jpg");
 }
 
 .btnContainer{
