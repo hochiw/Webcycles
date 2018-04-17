@@ -121,3 +121,7 @@ body {
     word-wrap: break-word;
 
 }
+
+#greeting-name {
+    color:black;
+}
