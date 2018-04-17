@@ -10,11 +10,14 @@ html { overflow-y: scroll; }
     padding-bottom: 10vh;
 }
 
-.pic{
-    width:75%;
-    height:50%;
+.pic {
     margin-left:auto;
     margin-right:auto;
-    padding-top: 3vh;
-    padding-bottom: 3vh;
+    font-size: 10px;
+}
+
+.picture {
+    width:75%;
+    height:50%;
+    margin:auto;
 }
