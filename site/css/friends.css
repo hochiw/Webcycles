@@ -1,0 +1,31 @@
+#backarrow {
+    background-image: url("content/resources/back.png");
+    grid-row: 1;
+    grid-column: 1;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+#searchContainer {
+    grid-row: 2;
+    grid-column: 2/span 3;
+}
+
+#searchBox {
+    border-radius: 1vw;
+    border: 1px solid;
+    height:50%;
+    padding-left: 10px;
+    width: 100%;
+}
+
+#searchContainer > * {
+    float:left;
+}
+
+#confirmSearch {
+    width:3%;
+    height:1px;
+    position:absolute;
+    margin:0 88px;
+}

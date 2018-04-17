@@ -122,3 +122,9 @@ a,a:hover, a:visited, a:link, a:active
     background-image: url("content/resources/account.jpg");
 }
 
+.flex {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+

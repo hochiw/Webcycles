@@ -11,9 +11,6 @@
     grid-row: 2/4;
     border: 1px solid;
     padding: 10px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .charities {
@@ -37,10 +34,6 @@
 .imgContainer {
     height:100%;
     width:100%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-
 }
 
 .imgContainer .image {
@@ -66,9 +59,6 @@
 .btnContainer{
     height:100%;
     width:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .charityMore {

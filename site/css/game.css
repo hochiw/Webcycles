@@ -23,9 +23,6 @@
 #circle-container {
     grid-row:5/7;
     grid-column:5/8;
-    display:flex;
-    align-items: center;
-    justify-content: center;
 }
 
 #circle {
@@ -34,17 +31,11 @@
     border-radius: 5vw;
     background: rgba(60, 157, 164,0.5);
     border: 1px solid;
-    display:flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .gamebtn {
     background:#86ceec;
     border-radius:1vw;
-    display:flex;
-    align-items: center;
-    justify-content: center;
     font-family: 'AmaticSC', sans-serit;
     font-size: 80px;
 }
