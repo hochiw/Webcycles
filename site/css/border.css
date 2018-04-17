@@ -36,6 +36,7 @@ body {
     grid-area: content;
     background: #fdfef0;
     display: grid;
+    grid-column-gap:10px;
     grid-row-gap: 10px;
     grid-template-columns: repeat(11,1fr);
     grid-template-rows: repeat(10,minmax(1em,70vh));
