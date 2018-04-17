@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3833e28f-b795-4fc1-b78b-223a23b67a94" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/site/blog.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/site/css/blog.css" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/site/changeemail.html" afterPath="$PROJECT_DIR$/site/changeemail.html" />
+      <change beforePath="$PROJECT_DIR$/site/changepassword.html" afterPath="$PROJECT_DIR$/site/changepassword.html" />
+      <change beforePath="$PROJECT_DIR$/site/changepostal.html" afterPath="$PROJECT_DIR$/site/changepostal.html" />
       <change beforePath="$PROJECT_DIR$/site/changeusername.html" afterPath="$PROJECT_DIR$/site/changeusername.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/site/changeemail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="679">
-              <caret line="42" column="37" lean-forward="false" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+              <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -32,8 +32,8 @@
       <file leaf-file-name="changepostal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/site/changepostal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="75" />
+            <state relative-caret-position="756">
+              <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="changeusername.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="changeusername.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/site/changeusername.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="38" column="15" lean-forward="true" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+            <state relative-caret-position="574">
+              <caret line="37" column="64" lean-forward="false" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -99,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="changepassword.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="changepassword.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/site/changepassword.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="721">
-              <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+            <state relative-caret-position="700">
+              <caret line="46" column="21" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -167,16 +167,16 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/site/settings.html" />
         <option value="$PROJECT_DIR$/site/js/docElements.js" />
-        <option value="$PROJECT_DIR$/site/changeemail.html" />
         <option value="$PROJECT_DIR$/site/js/changePassword.js" />
-        <option value="$PROJECT_DIR$/site/changepassword.html" />
         <option value="$PROJECT_DIR$/site/js/changePostal.js" />
-        <option value="$PROJECT_DIR$/site/changepostal.html" />
         <option value="$PROJECT_DIR$/site/js/changeUsername.js" />
         <option value="$PROJECT_DIR$/site/css/content/blog.css" />
         <option value="$PROJECT_DIR$/site/blog.html" />
         <option value="$PROJECT_DIR$/site/css/blog.css" />
         <option value="$PROJECT_DIR$/site/changeusername.html" />
+        <option value="$PROJECT_DIR$/site/changeemail.html" />
+        <option value="$PROJECT_DIR$/site/changepostal.html" />
+        <option value="$PROJECT_DIR$/site/changepassword.html" />
       </list>
     </option>
   </component>
@@ -304,12 +304,12 @@
       <workItem from="1521672721930" duration="3885000" />
       <workItem from="1522034006568" duration="6680000" />
       <workItem from="1522065484300" duration="1715000" />
-      <workItem from="1523860675417" duration="36498000" />
+      <workItem from="1523860675417" duration="37210000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48778000" />
+    <option name="totallyTimeSpent" value="49490000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -524,14 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site/changepassword.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="721">
-          <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/site/css/changeusername.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
@@ -544,14 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
           <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/changepostal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="75" />
           <folding />
         </state>
       </provider>
@@ -572,14 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site/changeemail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="42" column="37" lean-forward="false" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/site/css/border.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
@@ -590,8 +566,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/site/changeusername.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="38" column="15" lean-forward="true" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+        <state relative-caret-position="574">
+          <caret line="37" column="64" lean-forward="false" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/changeemail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/changepostal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/changepassword.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="46" column="21" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
           <folding />
         </state>
       </provider>
