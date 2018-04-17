@@ -1,0 +1,77 @@
+.theme {
+    grid-column: 2/11;
+    grid-row: 2/4;
+    border: 1px solid;
+    padding: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.charities {
+    grid-column: 2/11;
+    grid-row: 4/11;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 100%;
+}
+
+.charityDetails {
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 4fr repeat(3,1fr);
+    border:1px solid;
+    border-radius: 2vw;
+    text-align: center;
+    padding:20px;
+}
+
+.imgContainer {
+    height:100%;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.imgContainer .image {
+    height:80%;
+    width:65%;
+    border-radius: 60vw;
+    background-position: 50% 50%;
+    background-size:cover;
+}
+
+#image1 {
+    background-image: url("https://media.mnn.com/assets/images/2016/12/give-to-charity.jpg.653x0_q80_crop-smart.jpg");
+}
+
+#image2 {
+    background-image:url("https://www.marriagegeek.com/wp-content/uploads/2017/12/charity.jpg");
+}
+
+#image3 {
+    background-image:url("https://steemitimages.com/0x0/https://us.123rf.com/450wm/dizanna/dizanna1509/dizanna150900687/45708776-charity-word-cloud-heart-concept.jpg");
+}
+
+.btnContainer{
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.charityMore {
+    background:#86ceec;
+    border-radius:1vw;
+    padding:15px;
+    width: 10vw;
+    color:whitesmoke !important;
+}
+
+.charityMore:hover {
+    background:#1bb0ef;
+}
+

@@ -1,17 +1,3 @@
-@font-face {
-    font-family: "Josefin Sans";
-    src: url("content/fonts/JosefinSans-Bold.ttf");
-}
-
-body{
-    overflow: hidden;
-}
-
-@font-face {
-    font-family: "AmaticSC";
-    src: url("content/fonts/AmaticSC-Regular.ttf");
-}
-
 .text h2 {
     display: inline;
 }
