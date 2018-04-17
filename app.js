@@ -37,12 +37,7 @@ app.post("/login", function(req,res) {
 })
 
 app.get("/login", function(req,res) {
-    if (req.cookies['token']) {
-        res.redirect("/home?token=" + req.cookies['token'])
-    } else {
-        res.sendFile(__dirname + '/site/login.html');
-    }
-
+    res.sendFile(__dirname + '/site/login.html');
 });
 
 app.get("/settings", function(req,res) {
