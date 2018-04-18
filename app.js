@@ -30,6 +30,12 @@ app.get("/logout",function(req,res) {
     res.redirect("/home");
 })
 
+app.post("/register",function(req,res) {
+    var token = Buffer.from(req.body.username).toString('base64');
+    res.cookie('token', token)
+    res.redirect("/home?token=" + token);
+})
+
 app.post("/login", function(req,res) {
     var token = Buffer.from(req.body.username).toString('base64');
     res.cookie('token', token)
