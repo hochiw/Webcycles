@@ -9,7 +9,7 @@ app.use(cookieParser())
 
 
 app.get("/",function(req, res) {
-    res.sendFile(__dirname + '/site/index.html');
+    res.redirect("/login");
 });
 
 app.get("/home",function(req,res) {
