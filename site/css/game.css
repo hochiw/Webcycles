@@ -29,7 +29,7 @@
     width: 10vw;
     height: 10vw;
     border-radius: 5vw;
-    background: rgba(60, 157, 164,0.5);
+    background: linear-gradient(#13b5c0, #85ceed);
     border: 1px solid;
 }
 
@@ -38,7 +38,26 @@
     border-radius:1vw;
     font-family: 'AmaticSC', sans-serit;
     font-size: 80px;
+    background-size: contain;
+    margin:0 20px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: 1px solid black;
+
 }
 .gamebtn:hover {
     transform:scale(1.2);
+}
+
+#btn-playerscore {
+    background-image: url("../css/content/resources/playerscore.jpg");
+}
+#btn-recycling {
+    background-image: url("../css/content/resources/recycling.jpg");
+}
+#btn-friends {
+    background-image: url("../css/content/resources/friends.jpg");
+}
+#btn-charities {
+    background-image: url("../css/content/resources/charity.jpg");
 }

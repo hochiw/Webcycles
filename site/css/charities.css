@@ -1,9 +1,14 @@
 #backarrow {
     background-image: url("content/resources/back.png");
-    grid-row: 1;
-    grid-column: 1;
     background-size:contain;
     background-repeat: no-repeat;
+    height:100%;
+    width:100%;
+}
+
+.arrowcontainer {
+    grid-row: 1;
+    grid-column: 1;
 }
 
 .theme {

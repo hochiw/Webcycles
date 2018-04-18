@@ -1,9 +1,14 @@
 #backarrow {
     background-image: url("content/resources/back.png");
-    grid-row: 1;
-    grid-column: 1;
     background-size:contain;
     background-repeat: no-repeat;
+    height:100%;
+    width:100%;
+}
+
+.arrowcontainer {
+    grid-row: 1;
+    grid-column: 1;
 }
 
 #searchContainer {
@@ -33,13 +38,16 @@ img {
 }
 
 table {
-    background:rgba(0,0,0,0.3);
-    border:1px solid;
+    background:rgba(134, 206, 236, 0.7);
+    border-collapse: collapse;
 }
 
-table td {
-    border-top: 1px solid #000;
-    border-right: 1px solid #000;
+table,th,td {
+    border:5px solid #3c9da4;
+}
+
+td {
+    text-align: center;
 }
 
 tr {
@@ -47,5 +55,5 @@ tr {
 }
 
 tr:hover {
-    background:rgba(0,0,0,0.5);
+    background:rgba(134, 206, 236, 1);
 }
