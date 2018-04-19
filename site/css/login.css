@@ -17,7 +17,9 @@ body {
     display:flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Josefin Sans', sans-serit;
 }
+
 
 
 .video-container {
@@ -48,7 +50,7 @@ body {
     text-align: center;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 1fr auto auto;
     grid-row-gap: 10px;
 }
 
@@ -102,10 +104,8 @@ body {
 }
 
 
-
-#btnContainer.hidden {
+.hidden {
     display:none;
-
 }
 
 

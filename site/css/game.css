@@ -83,6 +83,7 @@
 .gamebtn > .overlay {
     border-radius:1vw;
     background:rgba(0,0,0,0.5) !important;
+    font-size: 40px;
 }
 
 #btn-playerscore {
