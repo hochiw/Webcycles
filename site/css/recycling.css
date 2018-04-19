@@ -12,8 +12,8 @@
 }
 
 #infoContainer {
-    grid-row: 2/9;
-    grid-column: 2/11;
+    grid-row: 2/ span 7;
+    grid-column: 2/ span 11;
     border: 1px solid;
     border-radius: 1vw;
     display: grid;
@@ -82,12 +82,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .convertContainer {
-    grid-column: 5/8;
-    grid-row: 9/10;
+    grid-column: 6/ span 3;
+    grid-row: 9;
 }
 
 #convertBtnContainer {
-    grid-column: 5/8;
+    grid-column: 6/ span 3;
     grid-row: 10;
 }
 #convertBtn {

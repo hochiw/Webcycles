@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../site/css/border.css">
     <link rel="stylesheet" type="text/css" href="../site/css/friends.css">
     <link rel="stylesheet" type="text/css" href="../site/css/charities.css">
+    <link rel="stylesheet" type="text/css" href="../site/css/game.css">
 </head>
 <body>
 
@@ -30,8 +31,19 @@
         <div class="flex arrowcontainer">
             <a href="/game" id="backarrow"></a>
         </div>
-        <div class="flex">
-            <h2>Friends List</h2>
+        <div class="flex gamenav">
+            <div class="flex navContainer">
+                <a class="flex nav" href="playerscore">Playerscore</a>
+            </div>
+            <div class="flex navContainer">
+                  <a class="flex nav" href="recycling">Recycling</a>
+            </div>
+            <div class="flex navContainer">
+                 <a class="flex nav" href="charities">Charities</a>
+            </div>
+            <div class="flex navContainer default">
+                  <a class="flex nav" href="friends">Friends List</a>
+            </div>
         </div>
 
         <form class="flex" id="searchContainer" onsubmit="window.location.href = '/user'; return false;">
@@ -56,6 +68,12 @@
                     <img align="center" width="100%" src="../site/css/content/resources/user3.png">
                 </td>
                 <td>Marco</td>
+            </tr>
+            <tr onclick="window.location='/user';">
+                <td>
+                    <img align="center" width="100%" src="../site/css/content/resources/user3.png">
+                </td>
+                <td>Sam</td>
             </tr>
         </table>
     </div>

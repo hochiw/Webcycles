@@ -1,15 +1,4 @@
-#backarrow {
-    background-image: url("content/resources/back.png");
-    background-size:contain;
-    background-repeat: no-repeat;
-    height:100%;
-    width:100%;
-}
 
-.arrowcontainer {
-    grid-row: 1;
-    grid-column: 1;
-}
 
 #searchContainer {
     grid-row: 2;
@@ -29,8 +18,8 @@
 }
 
 #userTable {
-    grid-row:3/span 7;
-    grid-column: 2/span 9;
+    grid-row:3/span 6;
+    grid-column: 2/span 11;
 }
 
 img {

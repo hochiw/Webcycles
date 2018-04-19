@@ -9,7 +9,7 @@
 }
 
 html,body {
-    height:100%;
+    height:100vh;
 }
 
 body {
@@ -24,8 +24,8 @@ body {
     grid-template-areas:
             "logo leaderboard"
             "sidebar content";
-    grid-template-columns: 25vw 75vw;
-    grid-template-rows: 15vh 80vh;
+    grid-template-columns: 15vw 85vw;
+    grid-template-rows: 20vh 70vh;
     min-height: 50vh;
 }
 .box {
@@ -38,7 +38,7 @@ body {
     display: grid;
     grid-column-gap:10px;
     grid-row-gap: 10px;
-    grid-template-columns: repeat(11,1fr);
+    grid-template-columns: repeat(13,1fr);
     grid-template-rows: repeat(10,minmax(1em,70vh));
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .logo:hover {
-    transform:scale(1.2);
+    transform:scale(1.1);
 }
 
 .leaderboard-banner {
@@ -67,7 +67,7 @@ body {
     display: grid;
     grid-row-gap: 25px;
     grid-template-columns: 100%;
-    grid-template-rows: repeat(3,23vh);
+    grid-template-rows: repeat(3,21vh);
     grid-template-areas:
             "Gamebtn"
             "Blogbtn"

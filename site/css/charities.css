@@ -12,14 +12,14 @@
 }
 
 .theme {
-    grid-column: 2/11;
+    grid-column: 2/ span 11;
     grid-row: 2/4;
     border: 1px solid;
     padding: 10px;
 }
 
 .charities {
-    grid-column: 2/11;
+    grid-column: 2/ span 11;
     grid-row: 4/11;
     display:grid;
     grid-template-columns: repeat(3,1fr);
@@ -29,7 +29,7 @@
 .charityDetails {
     display:grid;
     grid-template-columns: 100%;
-    grid-template-rows: 4fr repeat(3,1fr);
+    grid-template-rows: 4fr repeat(2,1fr) 2fr;
     border:1px solid;
     border-radius: 2vw;
     text-align: center;
