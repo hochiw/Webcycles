@@ -28,7 +28,14 @@ img {
 
 table {
     background:rgba(134, 206, 236, 0.7);
-    border-collapse: collapse;
+    border-collapse: collapse;;
+}
+
+thead, tbody { display: block; }
+
+tbody {
+    height:60vh;
+    overflow: auto;
 }
 
 table,th,td {
