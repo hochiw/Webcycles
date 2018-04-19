@@ -1,0 +1,11 @@
+#settings {
+    grid-column: 2/ span 3;
+    grid-row: 6;
+    background:#86ceec;
+    color:black;
+    border-radius: 10px;
+}
+
+#settings > a {
+    color: black !important;
+}

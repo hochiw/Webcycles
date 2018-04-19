@@ -46,7 +46,15 @@ app.get("/login", function(req,res) {
     res.sendFile(__dirname + '/site/login.html');
 });
 
-app.get("/settings", function(req,res) {
+app.get("/account", function(req,res) {
+    if (req.cookies['token']) {
+        res.sendFile(__dirname + '/site/account.html');
+    } else {
+        res.redirect("/login");
+    }
+});
+
+app.get("/account/settings", function(req,res) {
     if (req.cookies['token']) {
         res.sendFile(__dirname + '/site/settings.html');
     } else {
@@ -54,7 +62,7 @@ app.get("/settings", function(req,res) {
     }
 });
 
-app.get("/settings/changeusername", function(req,res) {
+app.get("/account/settings/changeusername", function(req,res) {
     if (req.cookies['token']) {
         res.sendFile(__dirname + '/site/changeusername.html');
     } else {
@@ -62,7 +70,7 @@ app.get("/settings/changeusername", function(req,res) {
     }
 });
 
-app.get("/settings/changepassword", function(req,res) {
+app.get("/account/settings/changepassword", function(req,res) {
     if (req.cookies['token']) {
         res.sendFile(__dirname + '/site/changepassword.html');
     } else {
@@ -70,7 +78,7 @@ app.get("/settings/changepassword", function(req,res) {
     }
 });
 
-app.get("/settings/changeemail", function(req,res) {
+app.get("/account/settings/changeemail", function(req,res) {
     if (req.cookies['token']) {
         res.sendFile(__dirname + '/site/changeemail.html');
     } else {
@@ -78,7 +86,7 @@ app.get("/settings/changeemail", function(req,res) {
     }
 });
 
-app.get("/settings/changepostal", function(req,res) {
+app.get("/account/settings/changepostal", function(req,res) {
     if (req.cookies['token']) {
         res.sendFile(__dirname + '/site/changepostal.html');
     } else {
