@@ -4,7 +4,7 @@
     position: relative;
     top: 0;
     left:0;
-    width: 100%;
+    width: 95%;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 100%;
