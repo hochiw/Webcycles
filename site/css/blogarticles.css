@@ -1,4 +1,4 @@
-body{overflow-y: scroll; }
+
 
 .content {
     position: relative;
@@ -6,9 +6,10 @@ body{overflow-y: scroll; }
     left:0;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
     text-align: center;
+    overflow-y: scroll;
 }
 
 
@@ -21,14 +22,6 @@ body{overflow-y: scroll; }
 .picture {
     height: 50%;
     width: 50%;
-}
-
-.header {
-    grid-column: 2;
-}
-.text {
-    grid-column: 2;
-    grid-row: 4;
 }
 
 
