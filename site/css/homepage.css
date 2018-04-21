@@ -7,7 +7,7 @@
 }
 
 .leaderboard {
-    grid-column: 2 / span 7;
+    grid-column: 2 / span 6;
     grid-row: 3 / span 8;
     overflow: hidden;
     border: 1px solid #ccc;
@@ -104,8 +104,8 @@
 }
 
 .video {
-    grid-column: 9 / span 4;
-    grid-row: 3 / span 4;
+    grid-column: 8 / span 5;
+    grid-row: 3 / span 5;
     border: 1px solid #ccc;
     display: grid;
     padding: 13px;
