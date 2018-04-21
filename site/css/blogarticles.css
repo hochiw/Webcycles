@@ -1,14 +1,16 @@
-html { overflow-y: scroll; }
+body{overflow-y: scroll; }
 
 .content {
-    position: absolute;
-    top: 20vh;
-    left: 37vw;
-    width: 50%;
-    text-align: center;
+    position: relative;
+    top: 0;
+    left:0;
+    width: 100%;
     display: grid;
-    padding-bottom: 10vh;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: auto auto auto;
+    text-align: center;
 }
+
 
 .pic {
     margin-left:auto;
@@ -17,7 +19,16 @@ html { overflow-y: scroll; }
 }
 
 .picture {
-    width:75%;
-    height:50%;
-    margin:auto;
+    height: 50%;
+    width: 50%;
 }
+
+.header {
+    grid-column: 2;
+}
+.text {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+

@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Webcycles</title>
-    <link rel="stylesheet" type="text/css" href="site/css/border.css">
-    <link rel="stylesheet" type="text/css" href="site/css/settings.css">
-    <link rel="stylesheet" type="text/css" href="site/css/blog.css">
+    <link rel="stylesheet" type="text/css" href="css/border.css">
+    <link rel="stylesheet" type="text/css" href="css/blog.css">
 
 
 </head>
@@ -24,29 +23,50 @@
         <a href="/account" class="btn Account">
             <div class="overlay">Account</div>
         </a>
+    </div>
+
     <div class="content">
-        <h1>Blog</h1>
-    </div>
-    </div>
-        <table id="table" align="center">
-            <tr>
-                <th class="Name">Name</th>
-                <th>Date</th>
-                <th>Content Type</th>
-            </tr>
-            <tr>
-                <td class="Name" onclick="location.href='../site/blog/blog1.html'">Importance of Recycling</td>
-                <td>17/04/2018</td>
-                <td>Text Article</td>
-            </tr>
+        <h2 class="flex" id="title">Blog</h2>
+        <div class="list blogs">
+            <div class="article_block">
+                <a class="img link" href="blog/blog1.html">
+                    <img class=img src="../site/css/content/resources/trash.jpg">
+                    <div class="overlayB">
+                        <p class="quote">"Recycling is important in today’s world if we want to leave this planet for our future generations."
+                        </p>
+                        <p class="article_excerpt">Conservative Energy Future on why recycling is important</p>
+                    </div>
+                </a>
 
-            <tr>
-                <td class="Name" onclick="location.href='../site/blog/blog2.html'">How Recycling Works</td>
-                <td>17/04/2018</td>
-                <td>Video</td>
-            </tr>
-        </table>
-    </div>
+            </div>
 
+            <div class="article_block">
+                <a class="link" href="blog/blog2.html">
+                    <img class=img src="../site/css/content/resources/scishow.jpg">
+                    <div class="overlayB">
+                        <p class="quote">"Learn about how recycling works, from methods to pitfalls!."
+                        </p>
+                        <p class="article_excerpt">SciShow on How Recycling Works!</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="article_block">
+                <a class="link" href="blog/blog3.html">
+                    <img class=img src="../site/css/content/resources/swedish-recycling.jpg">
+                    <div class="overlayB">
+                        <p class="quote">"Sweden is so good at recycling that
+                            it has imported rubbish from other countries to keep its recycling plants going!"
+                        </p>
+                        <p class="article_excerpt">Hazel Sheffield on the Swedish Recycling Revolution</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</div>
 </body>
 </html>
