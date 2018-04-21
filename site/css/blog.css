@@ -8,11 +8,9 @@ html {
 }
 
 #title {
-    position:relative;
-    display:grid;
     font-size:50px;
     grid-row: 1;
-    grid-column: 7;
+    grid-column: 1/ span 12;
 }
 
 .blogs {
@@ -57,12 +55,11 @@ html {
 
 }
 
-.article_excerpt {
-    font-size:15px;
+.article_excerpt,.quote {
+    font-size:10px;
 
 }
 
 .quote {
-    font-size: 15px;
     opacity:0.7;
 }
