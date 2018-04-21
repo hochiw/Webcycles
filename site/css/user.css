@@ -11,7 +11,7 @@
     grid-column: 2/ span 3;
 }
 
-#profilePicture {
+.profilePicture {
     background-image: url("content/resources/user1.png");
     background-size: cover;
     height: 100%;
@@ -31,7 +31,7 @@
     grid-row: 6;
 }
 
-button {
+.btnContainer > button {
     border:0;
     background:#89CEEA;
     height:100%;
