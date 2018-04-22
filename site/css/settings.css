@@ -3,17 +3,17 @@
     text-align: center;
 }
 
-.content {
-    position: absolute;
-    top: 25vh;
-    left: 50vw;
-    width: 25%;
-    padding: 0px;
-    text-align: center;
-    display: grid;
+.settings {
+    display:grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr auto;
-    grid-row-gap: 0px;
+    grid-template-rows: repeat(5,1fr);
+    padding:10px;
+    border:1px solid;
+    border-radius: 10px
+}
+
+.settings > button:hover {
+    background: #50bfec;
 }
 
 button, input[type="submit"], input[type="button"] {
