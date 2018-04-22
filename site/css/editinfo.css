@@ -8,6 +8,10 @@
 
 }
 
+.text {
+    text-align: center;
+}
+
 form h2, form input[type="text"] {
     display:inline;
 }
@@ -15,9 +19,8 @@ form h2, form input[type="text"] {
 .textFormBox {
     font-size: 15px;
     border-radius:10px 10px;
-    width: 25vw;
+    width: 15vw;
     height: 5vh;
-    display: block;
     text-align: left;
     position: relative;
     border-top: 1px solid transparent;
@@ -37,4 +40,18 @@ form h2, form input[type="text"] {
 #newUsername:before {
 background-image: -webkit-linear-gradient( left , #FFF 40%, rgba(255, 255, 255, 0));
 background-image: linear-gradient(to right, #FFF 40%, rgba(255, 255, 255, 0));
+}
+
+.content {
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+}
+
+.inputContainer {
+    display:grid;
+    grid-template-rows: 120px 1fr;
+}
+
+#newPassword {
+    left:2vw;
 }

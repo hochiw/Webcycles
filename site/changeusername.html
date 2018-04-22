@@ -24,21 +24,23 @@
         </a>
     </div>
 
-    <div class="content">
-        <div class="text">
-            <h1>Change Username</h1>
-            <h2>Current Username: </h2>
-            <p id="username"></p><br>
+    <div class="flex content">
+        <div class="inputContainer">
+            <div class="text">
+                <h1>Change Username</h1>
+                <h2>Current Username: </h2>
+                <p id="username"></p><br>
+            </div>
+            <br>
+            <form>
+                <h2>New Username:  </h2>
+                <input type="text" id="newUsername" class="textFormBox" required/><br><br>
+                <input type="submit" onClick="return changeUsername()"/>
+                <input id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel" />
+            </form>
+            </div>
         </div>
-        <br>
-        <form>
-            <h2>New Username:  </h2>
-            <input type="text" id="newUsername" class="textFormBox" required/><br><br>
-            <input type="submit" onClick="return changeUsername()"/>
-            <input id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel" />
-        </form>
     </div>
-</div>
 
 <script src="/site/js/changeUsername.js"></script>
 </body>

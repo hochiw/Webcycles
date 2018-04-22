@@ -24,21 +24,22 @@
         </a>
     </div>
 
-    <div class="content">
-        <div class="text">
-            <h1>Change Postal Code</h1>
-            <h2>Current Postal Code: </h2>
-            <p id="postal"></p><br>
+    <div class="flex content">
+        <div class="inputContainer">
+            <div class="text">
+                <h1>Change Postal Code</h1>
+                <h2>Current Postal Code: </h2>
+                <p id="postal"></p><br>
+            </div>
+            <br>
+            <form>
+                <h2>New Postal Code:  </h2>
+                <input type="text" class="textFormBox" id="newPostal" required/><br><br>
+                <input type="submit" onClick="return changePostal()"/>
+                <input id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel" />
+            </form>
         </div>
-        <br>
-        <form>
-            <h2>New Postal Code:  </h2>
-            <input type="text" class="textFormBox" id="newPostal" required/><br><br>
-            <input type="submit" onClick="return changePostal()"/>
-            <input id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel" />
-        </form>
     </div>
-</div>
 
 <script src="/site/js/changePostal.js"></script>
 </body>
