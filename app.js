@@ -46,6 +46,10 @@ app.get("/login", function(req,res) {
     res.sendFile(__dirname + '/site/login.html');
 });
 
+app.get("/aboutus",function (req,res) {
+    res.sendFile(__dirname + '/site/aboutus.html');
+});
+
 app.get("/account", function(req,res) {
     if (req.cookies['token']) {
         res.sendFile(__dirname + '/site/account.html');

@@ -1,0 +1,20 @@
+.content {
+    grid-template-rows: 80px auto;
+    grid-template-columns: 100%;
+    text-align: center;
+    overflow:auto;
+}
+
+.aboutUsText {
+    height:100%;
+    width: 97%;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+img {
+    height:auto;
+    width:100%;
+    display:block;
+}
