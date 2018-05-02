@@ -1,9 +1,14 @@
 function input(input,slider,ava) {
+
     var pSlider = document.getElementById(slider)
     var pAva = document.getElementById(ava);
     pAva.innerHTML -= input.value - pSlider.value;
-    slider.value = input.value;
-    return true;
+    if (pAva.innerHTML < pSlider.min) {
+        pAva.innerHTML = pSlider.min;
+        input.value = pSlider.max;
+    }
+
+    pSlider.value = input.value;
 }
 
 function slider(slider,input,ava) {
