@@ -4,19 +4,27 @@ var UserInfo = mongoose.model('account');
 var server = require('../app');
 
 var createUser = function(req,res) {
+
     var user = new UserInfo({
         "username":req.body.username,
         "password":passwordHash.generate(req.body.password),
         "email":req.body.email,
     });
-
-    user.save(function(err) {
-        if(!err) {
-            res.redirect("./login");
+    UserInfo.find({$or: [{email: user.email}, {username: user.username}]},function(err,user) {
+        if (!err && !user) {
+            user.save(function (err) {
+                if (!err) {
+                    res.redirect("./login");
+                } else {
+                    res.sendStatus(400);
+                }
+            });
         } else {
-            res.sendStatus(400);
+            server.io.emit("messages","Account or Email already exists");
         }
-    })
+    });
+
+
 }
 
 var login = function(req,res) {
