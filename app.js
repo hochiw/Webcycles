@@ -1,17 +1,15 @@
 var express = require('express');
-var cookieParser = require('cookie-parser');
-var parser = require('body-parser');
-var passwordHash = require('password-hash');
-var flash = require('req-flash');
+var bodyParser = require('body-parser');
 var app = express();
-var mongodb = require('mongodb').MongoClient;
-var db_account = process.env.dbac;
-var db_password= process.env.dbpw;
-var url = 'mongodb://'+db_account+':'+db_password+'@'+process.env.dburl + db_account;
 
+
+require("./models/database.js");
+
+var router = require('./router/router.js');
+app.use('/',router);
 app.use(express.static(__dirname));
-app.use(parser.urlencoded({extended:false}));
-app.use(cookieParser())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 
 
 
@@ -33,33 +31,7 @@ app.get("/home",function(req,res) {
 });
 
 app.get("/logout",function(req,res) {
-    res.clearCookie("token");
     res.redirect("/home");
-})
-
-app.post("/register",function(req,res) {
-
-    mongodb.connect(url, function(err,db) {
-        if (err) {
-            console.log(err);
-        }
-        console.log("Connected to the database server");
-        var dbo = db.db(db_account);
-        dbo.collection("account").insert({
-            "username":req.body.username,
-            "email":req.body.username,
-            "password":passwordHash.generate(req.body.password),
-            "score": {
-                "paper":0,
-                "metal":0,
-                "plastic":0,
-                "glass":0
-            }
-        })
-        db.close();
-    });
-    res.redirect("/login");
-
 })
 
 app.post("/login", function(req,res) {
@@ -83,7 +55,6 @@ app.get("/account", function(req,res) {
         res.redirect("/login");
     }
 });
-
 app.get("/account/settings", function(req,res) {
     if (req.cookies['token']) {
         res.sendFile(__dirname + '/site/settings.html');

@@ -13,6 +13,7 @@
     "express": "^4.16.3",
     "faker": "^4.1.0",
     "mongodb": "^3.0.7",
+    "mongoose": "^5.0.17",
     "password-hash": "^1.2.2",
     "req-flash": "0.0.3"
   }
