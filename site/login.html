@@ -38,4 +38,12 @@
 
 </body>
 <script src="site/js/login.js"></script>
+<script src="site/js/socket.io.js"></script>
+<script>
+    var socket = io.connect("http://localhost:4200");
+    socket.on('messages', function(data) {
+        alert(data);
+    });
+
+</script>
 </html>

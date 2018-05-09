@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var passwordHash = require('password-hash');
 var UserInfo = mongoose.model('account');
+var server = require('../app');
 
 var createUser = function(req,res) {
     var user = new UserInfo({
@@ -19,16 +20,17 @@ var createUser = function(req,res) {
 }
 
 var login = function(req,res) {
+
     var username = req.body.username;
     UserInfo.findOne({username: username},function(err,user) {
         if (!err && user != null) {
             if (passwordHash.verify(req.body.password,user.password)) {
                 res.redirect("/home");
             } else {
-                res.sendStatus(400);
+                server.io.emit("messages","Password is incorrect.");
             }
         } else {
-            res.sendStatus(404);
+            server.io.emit('messages','Account does not exist');
         }
     })
 };
