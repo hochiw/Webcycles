@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var server = require('http').createServer(app);
-var io = require('socket.io')(server)
+var socketIO = require('socket.io')
 var app = express();
 
 
@@ -13,15 +12,7 @@ app.use(express.static(__dirname));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-io.on('connection',function(client) {
-    console.log('Client connected...');
 
-    client.on('join', function(data) {
-        console.log(data);
-    });
-
-    exports.socket = client;
-});
 
 app.get("/",function(req, res) {
     res.redirect("/login");
@@ -94,11 +85,19 @@ app.get("/blog", function(req,res) {
     res.sendFile(__dirname + '/site/blog.html');
 });
 
-server.listen(4200);
+
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-    console.log(`App listening to port ${ PORT }`);
+const appServer = app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
+const io = socketIO(appServer);
+
+io.on('connection',function(client) {
+    console.log('Client connected...');
+
+    client.on('join', function(data) {
+        console.log(data);
+    });
+
+    exports.socket = client;
 });
 
-exports.server = server
-exports.io = io
+exports.io = io;

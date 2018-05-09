@@ -40,7 +40,7 @@
 <script src="site/js/login.js"></script>
 <script src="site/js/socket.io.js"></script>
 <script>
-    var socket = io.connect("http://localhost:4200");
+    var socket = io();
     socket.on('messages', function(data) {
         alert(data);
     });
