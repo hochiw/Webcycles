@@ -35,5 +35,23 @@ var login = function(req,res) {
     })
 };
 
+var updateScore = function(req,res) {
+    const newScore = {
+        "Score": {
+            "paper": req.body.Paper,
+            "plastic": req.body.Plastic,
+            "metal": req.body.Metal,
+            "glass": req.body.Glass,
+            "total": req.body.Total,
+        }
+    }
+    UserInfo.update({_id: /*INSERT COOKIES HERE */req.params.id}, newScore, function(err, raw) {
+        if (err) {
+            res.send(err);
+        }
+        res.send(raw);
+    });
+}
+
 module.exports.createUser = createUser;
 module.exports.login = login;
