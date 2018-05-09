@@ -34,12 +34,6 @@ app.get("/logout",function(req,res) {
     res.redirect("/home");
 })
 
-app.post("/login", function(req,res) {
-    var token = Buffer.from(req.body.username).toString('base64');
-    res.cookie('token', token)
-    res.redirect("/home?token=" + token);
-})
-
 app.get("/login", function(req,res) {
     res.sendFile(__dirname + '/site/login.html');
 });
@@ -49,106 +43,54 @@ app.get("/aboutus",function (req,res) {
 });
 
 app.get("/account", function(req,res) {
-    if (req.cookies['token']) {
-        res.sendFile(__dirname + '/site/account.html');
-    } else {
-        res.redirect("/login");
-    }
+    res.sendFile(__dirname + '/site/account.html');
 });
 app.get("/account/settings", function(req,res) {
-    if (req.cookies['token']) {
-        res.sendFile(__dirname + '/site/settings.html');
-    } else {
-        res.redirect("/login");
-    }
+    res.sendFile(__dirname + '/site/settings.html');
 });
 
 app.get("/account/settings/changeusername", function(req,res) {
-    if (req.cookies['token']) {
-        res.sendFile(__dirname + '/site/changeusername.html');
-    } else {
-        res.redirect("/login");
-    }
+    res.sendFile(__dirname + '/site/changeusername.html');
 });
 
 app.get("/account/settings/changepassword", function(req,res) {
-    if (req.cookies['token']) {
-        res.sendFile(__dirname + '/site/changepassword.html');
-    } else {
-        res.redirect("/login");
-    }
+    res.sendFile(__dirname + '/site/changepassword.html');
 });
 
 app.get("/account/settings/changeemail", function(req,res) {
-    if (req.cookies['token']) {
-        res.sendFile(__dirname + '/site/changeemail.html');
-    } else {
-        res.redirect("/login");
-    }
+    res.sendFile(__dirname + '/site/changeemail.html');
 });
 
 app.get("/account/settings/changepostal", function(req,res) {
-    if (req.cookies['token']) {
-        res.sendFile(__dirname + '/site/changepostal.html');
-    } else {
-        res.redirect("/login");
-    }
+    res.sendFile(__dirname + '/site/changepostal.html');
 });
 
 app.get("/game", function(req,res) {
-    if (req.cookies['token']) {
-        res.sendFile(__dirname + '/site/game.html');
-    } else {
-        res.redirect("/login");
-    }
+    res.sendFile(__dirname + '/site/game.html');
 });
 
 app.get("/game/charities", function(req,res) {
-    if (req.cookies['token']) {
-        res.sendFile(__dirname + '/site/charities.html');
-    } else {
-        res.redirect("/login");
-    }
+    res.sendFile(__dirname + '/site/charities.html');
 });
 
 app.get("/game/recycling", function(req,res) {
-    if (req.cookies['token']) {
-        res.sendFile(__dirname + '/site/recycling.html');
-    } else {
-        res.redirect("/login");
-    }
+    res.sendFile(__dirname + '/site/recycling.html');
 });
 
 app.get("/game/playerscore", function(req,res) {
-    if (req.cookies['token']) {
-        res.sendFile(__dirname + '/site/playerscore.html');
-    } else {
-        res.redirect("/login");
-    }
+    res.sendFile(__dirname + '/site/playerscore.html');
 });
 
 app.get("/game/friends", function(req,res) {
-    if (req.cookies['token']) {
-        res.sendFile(__dirname + '/site/friends.html');
-    } else {
-        res.redirect("/login");
-    }
+    res.sendFile(__dirname + '/site/friends.html');
 });
 
 app.get("/user", function(req,res) {
-    if (req.cookies['token']) {
-        res.sendFile(__dirname + '/site/user.html');
-    } else {
-        res.redirect("/login");
-    }
+    res.sendFile(__dirname + '/site/user.html');
 });
 
 app.get("/blog", function(req,res) {
-    if (req.cookies['token']) {
-        res.sendFile(__dirname + '/site/blog.html');
-    } else {
-        res.redirect("/login");
-    }
+    res.sendFile(__dirname + '/site/blog.html');
 });
 
 
