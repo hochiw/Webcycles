@@ -8,14 +8,16 @@ function input(input,slider,total,formName) {
 
     // Detection for invalid input
     //When input is over the maximum
-    if (total.innerHTML > slider.max) {
+    if (input.value > parseInt(slider.max)) {
         total.innerHTML = slider.max;
         input.value = slider.max;
+        material.value = slider.max;
     }
     //When input is below the minimum
-    if (total.innerHTML < slider.min){
+    if (input.value < parseInt(slider.min)){
         total.innerHTML = slider.min;
         input.value = slider.min;
+        material.value = slider.min;
     }
     slider.value = input.value;
     totalCalculator();
@@ -26,20 +28,21 @@ function slider(slider,input,total,formName) {
     var total = document.getElementById(total);
     var material = document.getElementById(formName);
     total.innerHTML = slider.value;
-    total.innerHTML = parseInt(total.innerHTML) + parseInt(slider.value) - parseInt(input.value);
     input.value = slider.value;
     material.value = slider.value;
     totalCalculator();
 }
 
 function totalCalculator(){
-    var total = document.getElementById('totalForm');
+    var totalForm = document.getElementById('totalForm');
+    var total = document.getElementById('total')
     var paper = document.getElementById('paperForm');
-    var plastic = document.getElementById('plastic');
+    var plastic = document.getElementById('plasticForm');
     var metal = document.getElementById('metalForm');
     var glass = document.getElementById('glassForm');
-
-    total.value = paper.value + plastic.value + metal.value + glass.value;
+    var sum = parseInt(paper.value) + parseInt(plastic.value) + parseInt(metal.value) + parseInt(glass.value);
+    total.innerHTML = sum.toString();
+    totalForm.value = sum.toString();
 }
 
 
