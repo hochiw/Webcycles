@@ -18,16 +18,7 @@ app.get("/",function(req, res) {
 });
 
 app.get("/home",function(req,res) {
-    if (req.query.token) {
-        res.sendFile(__dirname + '/site/home.html');
-    }
-    else {
-        if (req.cookies['token']) {
-            res.redirect("/home?token="+req.cookies['token']);
-        } else {
-            res.redirect("/login");
-        }
-    }
+    res.sendFile(__dirname + '/site/home.html');
 });
 
 app.get("/logout",function(req,res) {

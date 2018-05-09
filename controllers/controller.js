@@ -9,7 +9,7 @@ var createUser = function(req,res) {
         "email":req.body.email,
     });
 
-    user.save(function(err,newUser) {
+    user.save(function(err) {
         if(!err) {
             res.redirect("./login");
         } else {
@@ -18,11 +18,15 @@ var createUser = function(req,res) {
     })
 }
 
-var findOneUser = function(req,res) {
+var login = function(req,res) {
     var username = req.body.username;
-    UserInfo.findByTitle(username,function(err,user) {
-        if (!err) {
-            res.send(user);
+    UserInfo.findOne({username: username},function(err,user) {
+        if (!err && user != null) {
+            if (passwordHash.verify(req.body.password,user.password)) {
+                res.redirect("/home");
+            } else {
+                res.sendStatus(400);
+            }
         } else {
             res.sendStatus(404);
         }
@@ -30,4 +34,4 @@ var findOneUser = function(req,res) {
 };
 
 module.exports.createUser = createUser;
-module.exports.findOneUser = findOneUser;
+module.exports.login = login;
