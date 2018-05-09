@@ -25,6 +25,7 @@ var login = function(req,res) {
     UserInfo.findOne({username: username},function(err,user) {
         if (!err && user != null) {
             if (passwordHash.verify(req.body.password,user.password)) {
+                res.cookie('userID',user.id, { maxAge: 900000, httpOnly: true })
                 res.redirect("/home");
             } else {
                 server.io.emit("messages","Password is incorrect.");

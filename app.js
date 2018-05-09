@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var socketIO = require('socket.io')
+var cookieParser = require('cookie-parser');
 var app = express();
 
 
@@ -11,18 +12,26 @@ app.use('/',router);
 app.use(express.static(__dirname));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(cookieParser());
 
-
-
-app.get("/",function(req, res) {
-    res.redirect("/login");
+var cookieCheck = function(req,res) {
+    if (!req.cookies.userID) {
+        res.redirect("/login");
+        return false;
+    }
+    return true;
+}
+app.get("/",function(req, res, next) {
+    if(cookieCheck(req,res)) {res.redirect("/home");};
 });
 
 app.get("/home",function(req,res) {
-    res.sendFile(__dirname + '/site/home.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/home.html');};
+
 });
 
 app.get("/logout",function(req,res) {
+    res.clearCookie("userID");
     res.redirect("/home");
 })
 
@@ -31,58 +40,58 @@ app.get("/login", function(req,res) {
 });
 
 app.get("/aboutus",function (req,res) {
-    res.sendFile(__dirname + '/site/aboutus.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/aboutus.html');};
 });
 
 app.get("/account", function(req,res) {
-    res.sendFile(__dirname + '/site/account.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/account.html');};
 });
 app.get("/account/settings", function(req,res) {
-    res.sendFile(__dirname + '/site/settings.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/settings.html');};
 });
 
 app.get("/account/settings/changeusername", function(req,res) {
-    res.sendFile(__dirname + '/site/changeusername.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/changeusername.html');};
 });
 
 app.get("/account/settings/changepassword", function(req,res) {
-    res.sendFile(__dirname + '/site/changepassword.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/changepassword.html');};
 });
 
 app.get("/account/settings/changeemail", function(req,res) {
-    res.sendFile(__dirname + '/site/changeemail.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/changeemail.html');};
 });
 
 app.get("/account/settings/changepostal", function(req,res) {
-    res.sendFile(__dirname + '/site/changepostal.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/changepostal.html');};
 });
 
 app.get("/game", function(req,res) {
-    res.sendFile(__dirname + '/site/game.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/game.html');};
 });
 
 app.get("/game/charities", function(req,res) {
-    res.sendFile(__dirname + '/site/charities.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/charities.html');};
 });
 
 app.get("/game/recycling", function(req,res) {
-    res.sendFile(__dirname + '/site/recycling.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/recycling.html');};
 });
 
 app.get("/game/playerscore", function(req,res) {
-    res.sendFile(__dirname + '/site/playerscore.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/playerscore.html');};
 });
 
 app.get("/game/friends", function(req,res) {
-    res.sendFile(__dirname + '/site/friends.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/friends.html');};
 });
 
 app.get("/user", function(req,res) {
-    res.sendFile(__dirname + '/site/user.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/user.html');};
 });
 
 app.get("/blog", function(req,res) {
-    res.sendFile(__dirname + '/site/blog.html');
+    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/blog.html');};
 });
 
 
