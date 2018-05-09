@@ -50,9 +50,9 @@
                 <div class="icon" id="paperIcon"></div>
                 <p>Available: <span id="papAva">257</span></p>
                 <div>
-                    <input type="number" id="papInput" class="convert-value" value="0" name="quantity" min="0" max="257" oninput="input(this,'papRange','papAva');">
+                    <input type="number" id="papInput" class="convert-value" value="0" name="quantity" min="0" max="1000" oninput="input(this,'papRange','papAva','paperForm');">
                     <div class="slidecontainer">
-                        <input type="range" min="0" max="257" value="0" step="1" class="slider" id="papRange" oninput="slider(this,'papInput','papAva')">
+                        <input type="range" min="0" max="257" value="0" step="1" class="slider" id="papRange" oninput="slider(this,'papInput','papAva','paperForm')">
                     </div>
                 </div>
             </div>
@@ -61,9 +61,9 @@
                 <div class="icon" id="metalIcon"></div>
                 <p>Available: <span id="mAva">138</span></p>
                 <div>
-                    <input type="number" id="mInput" class="convert-value" value="0" name="quantity" min="0" max="138" oninput="input(this,'mRange','mAva');">
+                    <input type="number" id="mInput" class="convert-value" value="0" name="quantity" min="0" max="1000" oninput="input(this,'mRange','mAva','metalForm');">
                     <div class="slidecontainer">
-                        <input type="range" min="0" max="138" value="0" step="1" class="slider" id="mRange" oninput="slider(this,'mInput','mAva')">
+                        <input type="range" min="0" max="138" value="0" step="1" class="slider" id="mRange" oninput="slider(this,'mInput','mAva','metalForm')">
                     </div>
                 </div>
             </div>
@@ -72,9 +72,9 @@
                 <div class="icon" id="plasticIcon"></div>
                 <p>Available: <span id="plaAva">386</span></p>
                 <div>
-                    <input type="number" id="plaInput" class="convert-value" value="0" name="quantity" min="0" max="386" oninput="input(this,'plaRange','plaAva')">
+                    <input type="number" id="plaInput" class="convert-value" value="0" name="quantity" min="0" max="1000" oninput="input(this,'plaRange','plaAva','plasticForm')">
                     <div class="slidecontainer">
-                        <input type="range" min="0" max="386" value="0" step="1" class="slider" id="plaRange" oninput="slider(this,'plaInput','plaAva')">
+                        <input type="range" min="0" max="386" value="0" step="1" class="slider" id="plaRange" oninput="slider(this,'plaInput','plaAva','plasticForm')">
                     </div>
                 </div>
             </div>
@@ -83,9 +83,9 @@
                 <div class="icon" id="glassIcon"></div>
                 <p>Available: <span id="gAva">507</span></p>
                 <div>
-                    <input type="number" id="gInput" class="convert-value" value="0" name="quantity" min="0" max="507" oninput="input(this,'gRange','gAva')">
+                    <input type="number" id="gInput" class="convert-value" value="0" name="quantity" min="0" max="1000" oninput="input(this,'gRange','gAva','glassForm')">
                     <div class="slidecontainer">
-                        <input type="range" min="0" max="507" value="0" step="1" class="slider" id="gRange" oninput="slider(this,'gInput','gAva')">
+                        <input type="range" min="0" max="507" value="0" step="1" class="slider" id="gRange" oninput="slider(this,'gInput','gAva','glassForm')">
                     </div>
                 </div>
         </div>
@@ -95,12 +95,17 @@
             <p>Total points to convert: <span id="total">0</span></p>
         </div>
         <div class="flex" id="convertBtnContainer">
-            <a href="/game" id="convertBtn">
-                <p>Convert</p>
-            </a>
+            <form id="convertRequest" action="/game/recycling" method="post">
+                <input type="hidden" name="Paper" id="paperForm">
+                <input type="hidden" name="Metal" id="metalForm">
+                <input type="hidden" name="Plastic" id="plasticForm">
+                <input type="hidden" name="Glass" id="glassForm">
+                <input type="hidden" name="Total" id="totalForm">
+                <input id="convertBtn" type="submit" value="Submit">
+            </form>
+
         </div>
 </div>
-
 </body>
 <script src="../site/js/recycling.js"></script>
 </html>
