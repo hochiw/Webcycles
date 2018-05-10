@@ -1,0 +1,38 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Webcycles
+        link(rel='stylesheet', type='text/css', href='../site/css/border.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/charities.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/friends.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/game.css')
+    body
+        .wrapper
+            a.box.logo(href='/home')
+            .box.leaderboard-banner
+            .box.sidebar
+                a.btn.Game(href='/game')
+                    .overlay Game
+                a.btn.Blog(href='/blog')
+                    .overlay Blog
+                a.btn.Account(href='/account')
+                    .overlay Account
+
+            .box.content
+                .flex.arrowcontainer
+                    a#backarrow(href='/game')
+                .flex.gamenav
+                    .flex.navContainer
+                        a.flex.nav(href='playerscore') Playerscore
+                    .flex.navContainer
+                        a.flex.nav(href='recycling') Recycling
+                    .flex.navContainer.default
+                        a.flex.nav(href='charities') Charities
+                    .flex.navContainer
+                        a.flex.nav(href='friends') Friends List
+
+
+            form.flex#searchContainer(action="/user", method="get")
+                input(type="text", id="searchBox", name="username", placeholder="Search for user")
+                input(type="submit", style="visibility: hidden")
