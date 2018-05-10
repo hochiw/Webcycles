@@ -89,7 +89,7 @@ var updateScore = function(req,res) {
 }
 
 var findOneUser = function(req,res){
-    var username = req.params.username;
+    var username = req.body.username;
     UserInfo.findOne({username: username},function(err,user) {
         if(!err && user!= null) {
             res.send(user)
