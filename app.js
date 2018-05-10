@@ -79,9 +79,9 @@ app.get("/game/playerscore", function(req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/playerscore.html');};
 });
 
-app.get("/game/friends", function(req,res) {
-    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/friends.html');};
-});
+//app.get("/game/friends", function(req,res) {
+    //if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/friends.html');};
+//});
 
 app.get("/user", function(req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/user.html');};

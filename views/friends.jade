@@ -18,3 +18,34 @@ html(lang='en')
                     .overlay Blog
                 a.btn.Account(href='/account')
                     .overlay Account
+
+            .box.content
+                .flex.arrowcontainer
+                    a#backarrow(href='/game')
+                .flex.gamenav
+                    .flex.navContainer
+                        a.flex.nav(href='playerscore') Playerscore
+                    .flex.navContainer
+                        a.flex.nav(href='recycling') Recycling
+                    .flex.navContainer.default
+                        a.flex.nav(href='charities') Charities
+                    .flex.navContainer
+                        a.flex.nav(href='friends') Friends List
+
+
+                form.flex#searchContainer(action="/user", method="get")
+                    input(type="text", id="searchBox", name="username", placeholder="Search for user")
+                    input(type="submit", style="visibility: hidden")
+
+                table#userTable
+                    tbody
+                        each item in #{followed}
+                        tr(onclick="window.location='/user'")
+                            td(width="20%")
+                                img(align="center" width="100%" src="../site/css/content/resources/user1.png")
+                            td
+                                p #{item}
+                        tr
+    script(src="../site/js/Friends.js")
+
+

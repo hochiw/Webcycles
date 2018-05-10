@@ -59,4 +59,15 @@ router.get('/user/:name', function(req, res) {
     });
 });
 
+
+router.get('/game/friends', function(req, res) {
+    controller.getUser(req,function(err,user) {
+        var followedList = user.followedList;
+        if(app.cookieCheck(req,res) && !err) res.render('friends', {
+            followed: followedList
+        });
+    });
+});
+
+
 module.exports = router;
