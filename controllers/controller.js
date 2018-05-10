@@ -88,9 +88,21 @@ var updateScore = function(req,res) {
     })
 }
 
+var findOneUser = function(req,res){
+    var username = req.body.username;
+    UserInfo.findOne({username: username},function(err,user) {
+            if(!err && user!= null) {
+                res.send(user)
+        }else{
+            res.sendStatus(404);
+        }
+    });
+};
+
 var getUser = function(req,user) {
     UserInfo.findOne({_id: req.cookies.userID},user);
 }
+
 
 var getCharities = function(req,charities) {
     Charities.findOne({},charities);
@@ -102,3 +114,4 @@ module.exports.updateScore = updateScore;
 module.exports.getUser = getUser;
 module.exports.getCharities = getCharities;
 module.exports.updateCharity = updateCharity;
+module.exports.findOneUser = findOneUser;
