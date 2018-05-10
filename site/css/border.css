@@ -59,6 +59,7 @@ body {
     background-image: url("content/resources/banner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position:50% 50%;
 }
 
 .sidebar {
