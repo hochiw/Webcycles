@@ -46,6 +46,17 @@ router.get('/account',function(req,res) {
 });
 
 
-
+router.get('/user/:name', function(req, res) {
+    return controller.findOneUser(req, function(err, user) {
+        var score = user.score;
+        if(app.cookieCheck(req,res) && !err) res.render('account',{
+            papAmount:score.paper,
+            mAmount:score.metal,
+            plaAmount:score.plastic,
+            gAmount:score.glass,
+            profilePicture:user.profilePicture
+        });
+    });
+});
 
 module.exports = router;
