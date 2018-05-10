@@ -16,8 +16,20 @@ function showLeaderboard(event, type) {
     event.currentTarget.className += " active";
 }
 
-document.getElementById("Default").click();
-var token = new URL(document.location.href).searchParams.get("token")
-if (token) {
-    document.getElementById('greeting-name').innerHTML = atob(token);
+function readCookie(name) {
+    var delim = document.cookie.split(';');
+    for(var i=0;i < delim.length;i++) {
+        var char = delim[i];
+        while (char.charAt(0)==' ') {
+            char = char.substring(1,char.length);
+        }
+        if (char.indexOf(name+"=") == 0)
+        {
+            return char.substring(name.length+1,char.length);
+        }
+    }
+    return null;
 }
+
+document.getElementById("Default").click();
+document.getElementById('greeting-name').innerHTML = readCookie('username');

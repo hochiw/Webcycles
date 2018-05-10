@@ -108,4 +108,12 @@
 </div>
 </body>
 <script src="../site/js/recycling.js"></script>
+<script src="../site/js/socket.io.js"></script>
+<script>
+    var socket = io();
+    socket.on('messages', function(data) {
+        alert(data);
+    });
+
+</script>
 </html>

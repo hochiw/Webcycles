@@ -1,19 +1,24 @@
 var mongoose = require('mongoose');
 var passwordHash = require('password-hash');
-var UserInfo = mongoose.model('account');
+var LocalStorage = require('node-localstorage').LocalStorage;
 var server = require('../app');
+
+
+var UserInfo = mongoose.model('account');
+localStorage = new LocalStorage('./scratch');
 
 var createUser = function(req,res) {
 
-    var user = new UserInfo({
+    var User = new UserInfo({
         "username":req.body.username,
         "password":passwordHash.generate(req.body.password),
         "email":req.body.email,
     });
-    UserInfo.find({$or: [{email: user.email}, {username: user.username}]},function(err,user) {
-        if (!err && !user) {
-            user.save(function (err) {
+    UserInfo.find({$or: [{email: req.body.email}, {username: req.body.username}]},function(err,user) {
+        if (!err && user.length == 0) {
+            User.save(function (err) {
                 if (!err) {
+
                     res.redirect("./login");
                 } else {
                     res.sendStatus(400);
@@ -33,7 +38,8 @@ var login = function(req,res) {
     UserInfo.findOne({username: username},function(err,user) {
         if (!err && user != null) {
             if (passwordHash.verify(req.body.password,user.password)) {
-                res.cookie('userID',user.id, { maxAge: 900000, httpOnly: true })
+                res.cookie('userID',user.id, { maxAge: 900000});
+                res.cookie('username',username,{ maxAge: 900000})
                 res.redirect("/home");
             } else {
                 server.io.emit("messages","Password is incorrect.");
@@ -45,22 +51,29 @@ var login = function(req,res) {
 };
 
 var updateScore = function(req,res) {
-    const newScore = {
-        "Score": {
-            "paper": req.body.Paper,
-            "plastic": req.body.Plastic,
-            "metal": req.body.Metal,
-            "glass": req.body.Glass,
-            "total": req.body.Total,
+    UserInfo.findOne({_id: req.cookies.userID},function(err,result) {
+        if (!err) {
+            result.score.paper += parseInt(req.body.Paper);
+            result.score.plastic += parseInt(req.body.Plastic);
+            result.score.metal += parseInt(req.body.Metal);
+            result.score.glass += parseInt(req.body.Glass);
+            result.score.total += parseInt(req.body.Total);
+            result.save(function(err) {
+                if(!err) {
+                    server.io.emit("messages", "Account Updated.");
+                    res.redirect('back');
+                } else {
+                    server.io.emit("messages","Error: Unable to update account.");
+                    res.redirect('back');
+                }
+            });
+        } else {
+            server.io.emit("messages","Error: "+ err );
+            res.redirect('back');
         }
-    }
-    UserInfo.update({_id: /*INSERT COOKIES HERE */req.params.id}, newScore, function(err, raw) {
-        if (err) {
-            res.send(err);
-        }
-        res.send(raw);
-    });
+    })
 }
 
 module.exports.createUser = createUser;
 module.exports.login = login;
+module.exports.updateScore = updateScore;
