@@ -1,0 +1,20 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Webcycles
+        link(rel='stylesheet', type='text/css', href='../site/css/border.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/charities.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/friends.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/game.css')
+    body
+        .wrapper
+            a.box.logo(href='/home')
+            .box.leaderboard-banner
+            .box.sidebar
+                a.btn.Game(href='/game')
+                    .overlay Game
+                a.btn.Blog(href='/blog')
+                    .overlay Blog
+                a.btn.Account(href='/account')
+                    .overlay Account
