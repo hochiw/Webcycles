@@ -15,3 +15,4 @@ mongoose.connect(url,function(err) {
 });
 
 require('./user.js');
+require('./charities.js');

@@ -12,13 +12,18 @@
 }
 
 .profilePicture {
-    background-image: url("content/resources/user1.png");
-    background-size: cover;
     height: 100%;
     width: 65%;
-    background-position: 50% 50%;
     border:1px solid;
     border-radius: 100%;
+}
+
+.profilePicture > img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:inline-block;
+    border-radius: 50%;
 }
 
 #addUser {
@@ -49,7 +54,7 @@
 }
 
 #infoContainer {
-    grid-row:4/span 7 !important;
+    grid-row:4/span 6 !important;
     grid-column: 6/span 7 !important;
 }
 

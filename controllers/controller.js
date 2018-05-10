@@ -1,11 +1,10 @@
 var mongoose = require('mongoose');
 var passwordHash = require('password-hash');
-var LocalStorage = require('node-localstorage').LocalStorage;
 var server = require('../app');
 
 
 var UserInfo = mongoose.model('account');
-localStorage = new LocalStorage('./scratch');
+var Charities = mongoose.model('charities');
 
 var createUser = function(req,res) {
 
@@ -18,7 +17,6 @@ var createUser = function(req,res) {
         if (!err && user.length == 0) {
             User.save(function (err) {
                 if (!err) {
-
                     res.redirect("./login");
                 } else {
                     res.sendStatus(400);
@@ -31,6 +29,7 @@ var createUser = function(req,res) {
 
 
 }
+
 
 var login = function(req,res) {
 
@@ -49,7 +48,22 @@ var login = function(req,res) {
         }
     })
 };
-
+var updateCharity = function(req,res) {
+    UserInfo.findOne({_id: req.cookies.userID},function(err,result) {
+        if (!err) {
+            result.selectedCharity = req.body.charity;
+            result.save(function(err) {
+                if(!err) {
+                    server.io.emit("messages","Account Updated.");
+                    res.redirect('back');
+                } else {
+                    server.io.emit("messages","Error: Unable to update account.");
+                    res.redirect('back');
+                }
+            });
+        }
+    });
+}
 var updateScore = function(req,res) {
     UserInfo.findOne({_id: req.cookies.userID},function(err,result) {
         if (!err) {
@@ -74,6 +88,17 @@ var updateScore = function(req,res) {
     })
 }
 
+var getUser = function(req,user) {
+    UserInfo.findOne({_id: req.cookies.userID},user);
+}
+
+var getCharities = function(req,charities) {
+    Charities.findOne({},charities);
+}
+
 module.exports.createUser = createUser;
 module.exports.login = login;
 module.exports.updateScore = updateScore;
+module.exports.getUser = getUser;
+module.exports.getCharities = getCharities;
+module.exports.updateCharity = updateCharity;

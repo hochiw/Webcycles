@@ -1,0 +1,67 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Webcycles
+        link(rel='stylesheet', type='text/css', href='../site/css/border.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/charities.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/game.css')
+    body
+        .wrapper
+            a.box.logo(href='/home')
+            .box.leaderboard-banner
+            .box.sidebar
+                a.btn.Game(href='/game')
+                    .overlay Game
+                a.btn.Blog(href='/blog')
+                    .overlay Blog
+                a.btn.Account(href='/account')
+                    .overlay Account
+            .box.content
+                .flex.arrowcontainer
+                    a#backarrow(href='/game')
+                .flex.gamenav
+                    .flex.navContainer
+                        a.flex.nav(href='playerscore') Playerscore
+                    .flex.navContainer
+                        a.flex.nav(href='recycling') Recycling
+                    .flex.navContainer.default
+                        a.flex.nav(href='charities') Charities
+                    .flex.navContainer
+                        a.flex.nav(href='friends') Friends List
+                .flex.box.theme
+                    img(src= "#{theme}")
+                .box.charities
+                    #charity1.charityDetails
+                        .flex.imgContainer
+                            #image1.image
+                                img(src="#{avatar1}")
+                        h2.charityName #{name1}
+                        p.charityDescription #{des1}
+                        .flex.btnContainer
+                            form(action='/game/charities', method='post')
+                                button.charitySelect(name='charity', value=0) Select
+                    #charity2.charityDetails
+                        .flex.imgContainer
+                            #image2.image
+                                img(src="#{avatar2}")
+                        h2.charityName #{name2}
+                        p.charityDescription #{des2}
+                        .flex.btnContainer
+                            form(action='/game/charities', method='post')
+                                button.charitySelect(name='charity', value=1) Select
+                    #charity3.charityDetails
+                        .flex.imgContainer
+                            #image3.image
+                                img(src="#{avatar3}")
+                        h2.charityName #{name3}
+                        p.charityDescription #{des3}
+                        .flex.btnContainer
+                            form(action='/game/charities', method='post')
+                                button.charitySelect(name='charity', value=2) Select
+    script(src='../site/js/socket.io.js')
+    script.
+        var socket = io();
+        socket.on('messages', function (data) {
+            alert(data);
+        });

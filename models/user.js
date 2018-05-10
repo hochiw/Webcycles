@@ -4,8 +4,9 @@ var UserInfo = mongoose.Schema(
         "username": {type: String},
         "password": {type: String},
         "email": {type: String},
+        "profilePicture": {type:String,default:"../site/css/content/resources/user1.png"},
         "selectedCharity": {
-            type: String,
+            type: Number,
             default: null
         },
         "followedList": {

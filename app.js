@@ -7,7 +7,11 @@ var app = express();
 
 require("./models/database.js");
 
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jade')
+
 var router = require('./router/router.js');
+
 app.use('/',router);
 app.use(express.static(__dirname));
 app.use(bodyParser.json())
@@ -43,9 +47,6 @@ app.get("/aboutus",function (req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/aboutus.html');};
 });
 
-app.get("/account", function(req,res) {
-    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/account.html');};
-});
 app.get("/account/settings", function(req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/settings.html');};
 });
@@ -68,10 +69,6 @@ app.get("/account/settings/changepostal", function(req,res) {
 
 app.get("/game", function(req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/game.html');};
-});
-
-app.get("/game/charities", function(req,res) {
-    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/charities.html');};
 });
 
 app.get("/game/recycling", function(req,res) {
@@ -110,3 +107,4 @@ io.on('connection',function(client) {
 });
 
 exports.io = io;
+exports.cookieCheck = cookieCheck;
