@@ -46,11 +46,10 @@
             </div>
         </div>
 
-        <form class="flex" id="searchContainer" onsubmit="createAction()" method ="get">
+        <form class="flex" id="searchContainer" onsubmit="window.location.href = '/user'; return false;">
             <input type="text" id="searchBox" placeholder="Search for user">
             <input type="submit" style="visibility: hidden;" />
         </form>
-
         <table id="userTable">
             <tr onclick="window.location='/user';">
                 <td width="20%">
