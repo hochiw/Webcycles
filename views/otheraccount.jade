@@ -27,10 +27,10 @@ html(lang='en')
                 .flex.profileContainer
                     .profilePicture
                 div
-                    .btnContainer#addUser
-                        button(value="Add User")
-                .btnContainer#blockUser
-                .button(value="Block User")
+                    form(action="/game/addFollower," method="put")
+                        input(type="submit", id="addUser", class="btnContainer", value="Add User")
+                    form(action="/game/removeFollower," method="delete")
+                        input(type="submit", id="blockUser", class="btnContainer", value="Remove User")
                 #playerDetails.flex
                     span Player Details
                 #infoContainer

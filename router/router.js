@@ -88,6 +88,7 @@ router.post('/user', function (req, res) {
     controller.findOneUser(req, function(err, user) {
         var score = user.score;
         if(app.cookieCheck(req,res) && !err) res.render('otheraccount',{
+            username: user.username,
             papAmount:score.paper,
             mAmount:score.metal,
             plaAmount:score.plastic,

@@ -40,7 +40,7 @@ html(lang='en')
                     table#userTable
                         each item in followed
                             form(id="form-id" method="post" action="/user")
-                                input(type="hidden" name="username" value="item")
+                                input(type="hidden" name="username" value= "#{item}" )
                             tr(onclick="document.getElementById('form-id').submit();")
                                 td#row(width="20%")
                                     img(align="center" width="100%" src="../site/css/content/resources/user1.png")
