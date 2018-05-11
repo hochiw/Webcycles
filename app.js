@@ -28,14 +28,10 @@ app.get("/",function(req, res, next) {
     if(cookieCheck(req,res)) {res.redirect("/home");};
 });
 
-app.get("/home",function(req,res) {
-    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/home.html');};
-
-});
 
 app.get("/logout",function(req,res) {
     res.clearCookie("userID");
-    res.redirect("/home");
+    res.redirect("/login");
 })
 
 app.get("/aboutus",function (req,res) {
