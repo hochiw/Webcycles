@@ -96,16 +96,15 @@ router.get('/user/:name', function(req, res) {
 
 router.get('/game/friends', function(req, res) {
     controller.getUser(req,function(err,user) {
-        var followedList = user.followedList;
         console.log(user.username)
-        if (!followedList || followedList === undefined) {
+        if ( user.followedList === undefined || !user.followedList) {
             if(app.cookieCheck(req,res) && !err) res.render('friends', {
-                followed: [1, 2, 3, 4]
+                followed: []
             });
         }
         else {
             if (app.cookieCheck(req, res) && !err) res.render('friends', {
-                followed: followedList
+                followed: user.followedList
             });
         }
     });

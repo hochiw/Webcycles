@@ -47,7 +47,8 @@ td {
 }
 
 tr {
-    cursor:pointer;
+    cursor: pointer;
+    width:100%;
 }
 
 tr:hover {
