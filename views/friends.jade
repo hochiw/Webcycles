@@ -27,31 +27,23 @@ html(lang='en')
                         a.flex.nav(href='playerscore') Playerscore
                     .flex.navContainer
                         a.flex.nav(href='recycling') Recycling
-                    .flex.navContainer.default
-                        a.flex.nav(href='charities') Charities
                     .flex.navContainer
+                        a.flex.nav(href='charities') Charities
+                    .flex.navContainer.default
                         a.flex.nav(href='friends') Friends List
 
 
-            form.flex#searchContainer(action="/user", method="get")
-                input(type="text", id="searchBox", name="username", placeholder="Search for user")
-                input(type="submit", style="visibility: hidden")
+                form.flex#searchContainer(action="/user", method="get")
+                    input(type="text", id="searchBox", name="username", placeholder="Search for user")
+                    input(type="submit", style="visibility: hidden")
 
-            if(#{followed}.length)
-                table#userTable
-                    tbody
-                        each item in #{followed}
-                        tr(onclick="window.location='/user'")
-                            td(width="20%")
-                                img(align="center" width="100%" src="../site/css/content/resources/user1.png")
-                            td(width="80%")
-                                p #{item}
-                        tr
-            else
+
                 table#usertable
-                    tr
-                        td(width="20%")
+                    each item in followed
+                        tr
+                            td(width="20%")="Hello"
+                                p Hello
 
-                        td(width="80%")
-
-                    tr
+                            td(width="80%")=item
+                                p Goodbye
+                        tr
