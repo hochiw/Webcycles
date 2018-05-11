@@ -23,7 +23,7 @@ var createUser = function(req,res) {
                 }
             });
         } else {
-            server.io.emit("messages","Account or Email already exists");
+            res.render('login',{reg_fail_msg:"Account or Email already exists"});
         }
     });
 
@@ -41,10 +41,10 @@ var login = function(req,res) {
                 res.cookie('username',username,{ maxAge: 900000})
                 res.redirect("/home");
             } else {
-                server.io.emit("messages","Password is incorrect.");
+                res.render('login',{log_fail_msg:"Password is incorrect."});
             }
         } else {
-            server.io.emit('messages','Account does not exist');
+            res.render('login',{log_fail_msg:"Account does not exist"});
         }
     })
 };
@@ -54,11 +54,9 @@ var updateCharity = function(req,res) {
             result.selectedCharity = req.body.charity;
             result.save(function(err) {
                 if(!err) {
-                    server.io.emit("messages","Account Updated.");
-                    res.redirect('back');
+                    res.redirect("/game/charities?msg=103")
                 } else {
-                    server.io.emit("messages","Error: Unable to update account.");
-                    res.redirect('back');
+                    res.redirect("/game/charities?msg=104")
                 }
             });
         }
@@ -74,16 +72,13 @@ var updateScore = function(req,res) {
             result.score.total += parseInt(req.body.Total);
             result.save(function(err) {
                 if(!err) {
-                    server.io.emit("messages", "Account Updated.");
-                    res.redirect('back');
+                    res.redirect("/game/recycling?msg=103")
                 } else {
-                    server.io.emit("messages","Error: Unable to update account.");
-                    res.redirect('back');
+                    res.redirect("/game/recycling?msg=104")
                 }
             });
         } else {
-            server.io.emit("messages","Error: "+ err );
-            res.redirect('back');
+            res.redirect("/game/recycling?msg=104")
         }
     })
 }

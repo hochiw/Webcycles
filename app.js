@@ -39,10 +39,6 @@ app.get("/logout",function(req,res) {
     res.redirect("/home");
 })
 
-app.get("/login", function(req,res) {
-    res.sendFile(__dirname + '/site/login.html');
-});
-
 app.get("/aboutus",function (req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/aboutus.html');};
 });

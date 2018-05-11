@@ -5,18 +5,34 @@ var controller = require('../controllers/controller.js');
 var app = require('../app');
 
 var router = express.Router();
+var msgs = require('../views/messages.json');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(cookieParser());
 
+
 router.post('/register', controller.createUser);
 router.post('/login', controller.login);
 router.post('/game/recycling', controller.updateScore);
 router.post('/game/charities', controller.updateCharity);
+router.get('/login',function(req,res) {
+    res.render('login');
+});
+router.get('/game/recycling',function(req,res) {
+    var message = null;
+    if (req.query['msg']) {
+        message = msgs[req.query['msg']]
+    }
+    res.render('recycling',{msgs:message});
+});
 router.get('/game/charities',function(req,res) {
     controller.getCharities(req,function(err,charities) {
         var theme = charities.theme;
+        var message = null;
+        if (req.query['msg']) {
+            message = msgs[req.query['msg']]
+        }
         if(app.cookieCheck(req,res) && !err) res.render('charities',{
             theme:theme,
             name1:charities.charities[0].name,
@@ -28,6 +44,7 @@ router.get('/game/charities',function(req,res) {
             name3:charities.charities[2].name,
             des3:charities.charities[2].descrip,
             avatar3:charities.charities[2].avatar,
+            msgs:message
         });
     });
 });

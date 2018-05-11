@@ -108,4 +108,8 @@ body {
     display:none;
 }
 
+.alert {
+    color:red;
+}
+
 

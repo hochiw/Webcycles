@@ -7,6 +7,8 @@ html(lang='en')
         link(rel='stylesheet', type='text/css', href='../site/css/charities.css')
         link(rel='stylesheet', type='text/css', href='../site/css/game.css')
     body
+        if msgs
+            .alert.flex #{msgs}
         .wrapper
             a.box.logo(href='/home')
             .box.leaderboard-banner
@@ -59,9 +61,3 @@ html(lang='en')
                         .flex.btnContainer
                             form(action='/game/charities', method='post')
                                 button.charitySelect(name='charity', value=2) Select
-    script(src='../site/js/socket.io.js')
-    script.
-        var socket = io();
-        socket.on('messages', function (data) {
-            alert(data);
-        });

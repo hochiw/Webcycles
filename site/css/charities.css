@@ -81,3 +81,11 @@
     background:#1bb0ef;
 }
 
+.alert {
+    position:absolute;
+    background:#13b5c0;
+    width:100%;
+    height:50px;
+    color:black !important;
+}
+

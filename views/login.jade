@@ -1,0 +1,45 @@
+doctype html
+html(lang='en')
+    head
+        link(rel='stylesheet', type='text/css', href='site/css/login.css')
+        meta(charset='UTF-8')
+        title Webcycles
+    body
+        .video-container
+            video#video(autoplay='', muted='', loop='')
+                source(src='site/css/content/resources/video.mp4', type='video/mp4')
+        .content
+            .title Webcycles
+            h3#slogan Plugging the joystick into recycling
+            #btnContainer
+                button#login(onclick='displayLoginform()') Login
+                button#register(onclick='displayRegistrationform()') Register
+            form#loginForm(onsubmit="location.href='../site/home.html'", action='/login', method='post')
+                input#LUser.form.username(type='text', name='username', maxlength='20', value='', placeholder='Username', required='')
+                br
+                input#LPass.form.password(type='password', name='password', value='', placeholder='Password', required='')
+                br
+                if log_fail_msg != ''
+                    .alert #{log_fail_msg}
+                input#Lback.form.back(type='button', onclick='displayChoicebtn()', value='Back')
+                input#Lsubmit.form.submit(type='submit', value='Login')
+            form#registrationForm(onsubmit="location.href='../site/home.html'", enctype='application/json', action='/register', method='post')
+                input#RUser.form.username(type='text', name='username', maxlength='20', value='', placeholder='Username', required='')
+                br
+                input#REmail.form.email(type='email', name='email', value='', placeholder='Email', required='')
+                br
+                input#RPass.form.password(type='password', name='password', value='', placeholder='Password', required='')
+                input#RPassR.form.password-repeat(type='password', name='password-repeat', value='', placeholder='Repeat Password', required='')
+                br
+                if reg_fail_msg != ''
+                    .alert #{reg_fail_msg}
+                input#Rback.form.back(type='button', onclick='displayChoicebtn()', value='Back')
+                input#Rsubmit.form.submit(type='submit', value='Register')
+    script(src='site/js/login.js')
+    if (log_fail_msg)
+        script.
+            document.getElementById("login").click();
+    if (reg_fail_msg)
+        script.
+            document.getElementById("register").click();
+
