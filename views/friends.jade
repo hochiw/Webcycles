@@ -37,13 +37,13 @@ html(lang='en')
                     input(type="text", id="searchBox", name="username", placeholder="Search for user")
                     input(type="submit", style="visibility: hidden")
 
+                if(followed.length)
+                    table#userTable
+                        each item in followed
+                            tr
+                                td(width="20%")="Hello"
+                                    p Hello
 
-                table#usertable
-                    each item in followed
-                        tr
-                            td(width="20%")="Hello"
-                                p Hello
-
-                            td(width="80%")=item
-                                p Goodbye
-                        tr
+                                td(width="80%")=item
+                                    p Goodbye
+                            tr
