@@ -20,13 +20,14 @@ router.post('/user/:username', controller.updateFollowed);
 
 
 router.get('/home',function(req,res) {
-    controller.getTop5Global(req,res,function(result) {
-        if (app.cookieCheck(req,res)) {
-            res.render('home',{top5Global:result});
-        } else {
-            res.redirect("/login");
-        }
-
+    controller.getTop5Friend(req,res,function(friends) {
+        controller.getTop5Global(req,res,function(global) {
+            if (app.cookieCheck(req,res)) {
+                res.render('home',{top5Global:global,top5Friends:friends});
+            } else {
+                res.redirect("/login");
+            }
+        });
     });
 
 });

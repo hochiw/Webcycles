@@ -125,7 +125,36 @@ exports.getTop5Global = function(req,res,cb) {
     })
 }
 
+exports.getTop5Friend = function(req,res,cb) {
+    UserInfo.findOne({_id: req.cookies.userID}, function(err,user) {
+        if (!err && user != null) {
+            var list = user.followedList;
+            UserInfo.find({'username':{ $in:list}},function(err,users) {
+                var top5 = [];
+                users.forEach(function(user) {
+                    if (top5.length == 0) {
+                        top5.push({"username":user.username,"profile":user.profilePicture,"total":user.score.total});
+                    } else if (user.score.total >= top5[0].total) {
+                        top5.unshift({"username":user.username,"profile":user.profilePicture,"total":user.score.total});
+                    } else {
+                        top5.push({"username":user.username,"profile":user.profilePicture,"total":user.score.total});
+                    }
+                });
+                cb(top5);
 
+            })
+
+        };
+    });
+
+
+}
+
+var getUserbyName = function(req,res,cb,name) {
+    UserInfo.findOne({username:name},function(err,user) {
+        return cb(user);
+    })
+}
 exports.getUser = function(req,user) {
     UserInfo.findOne({_id: req.cookies.userID},user);
 }
