@@ -66,7 +66,7 @@ router.get('/game/friends', function(req, res) {
         console.log(user.username)
         if (!followedList || followedList === undefined) {
             if(app.cookieCheck(req,res) && !err) res.render('friends', {
-                followed: []
+                followed: [1, 2, 3, 4]
             });
         }
         else {
