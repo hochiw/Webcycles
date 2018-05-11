@@ -107,10 +107,10 @@ exports.findOneUser = function(req, user) {
     console.log(username);
     UserInfo.findOne({username: username}, user);
 }
+
 exports.getTop5Global = function(req,res,cb) {
     UserInfo.find({},function(err,list) {
         var top5 = [];
-
         list.forEach(function(user) {
             if (top5.length == 0) {
                 top5.push({"username":user.username,"profile":user.profilePicture,"total":user.score.total});
