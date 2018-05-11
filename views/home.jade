@@ -1,0 +1,58 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Webcycles
+        link(rel='stylesheet', type='text/css', href='site/css/border.css')
+        link(rel='stylesheet', type='text/css', href='site/css/homepage.css')
+    body
+        .wrapper
+            a.box.logo(href='/home')
+            .box.leaderboard-banner
+            .box.sidebar
+                a.btn.Game(href='/game')
+                    .overlay Game
+                a.btn.Blog(href='/blog')
+                    .overlay Blog
+                a.btn.Account(href='/account')
+                    .overlay Account
+            .box.content
+                h1#greeting.box.greeting
+                    | Welcome back,
+                    a#greeting-name(href='/logout') User
+                .box.leaderboard
+                    .tabs
+                        button#Default.tab-btn(onclick="showLeaderboard(event, 'Global')") Global
+                        button.tab-btn(onclick="showLeaderboard(event, 'Friends')") Friends
+                    #Friends.leaderboardTab
+                        .ranking.rank1
+                            a.profilePicture(href='/user')
+                                .flex.overlayR #1
+                        .ranking.rank2
+                            a.profilePicture(href='/user')
+                                .flex.overlayR #2
+                        .ranking.rank3
+                            a.profilePicture(href='/user')
+                                .flex.overlayR #3
+                        .ranking.rank4
+                            a.profilePicture(href='/user')
+                                .flex.overlayR #4
+                        .ranking.rank5
+                            a.profilePicture(href='/user')
+                                .flex.overlayR #5
+                    #Global.leaderboardTab
+                        - for (var i = 0; i < top5Global.length; ++i) {
+                        .ranking(class="rank" + (i + 1))
+                            a.profilePicture(href="/user?username=" + top5Global[i].username)
+                                img(src=top5Global[i].profile)
+                                .flex.overlayR #{'#'+ (i + 1)}
+                        -}
+                .box.video
+                    .video-container
+                        video#video(autoplay='', muted='', loop='')
+                            source(src='site/css/content/resources/video.mp4', type='video/mp4')
+                    .flex.video-des This month's charity theme: Example Theme
+                .box.about
+                    h1 About Us
+                    a#aboutus-link(href='/aboutus') Click here to find out more
+    script(src='site/js/home.js')

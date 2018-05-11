@@ -5,8 +5,9 @@ var server = require('../app');
 
 var UserInfo = mongoose.model('account');
 var Charities = mongoose.model('charities');
+var exports = module.exports = {};
 
-var createUser = function(req,res) {
+exports.createUser = function(req,res) {
 
     var User = new UserInfo({
         "username":req.body.username,
@@ -31,7 +32,7 @@ var createUser = function(req,res) {
 }
 
 
-var login = function(req,res) {
+exports.login = function(req,res) {
 
     var username = req.body.username;
     UserInfo.findOne({username: username},function(err,user) {
@@ -48,7 +49,7 @@ var login = function(req,res) {
         }
     })
 };
-var updateCharity = function(req,res) {
+exports.updateCharity = function(req,res) {
     UserInfo.findOne({_id: req.cookies.userID},function(err,result) {
         if (!err) {
             result.selectedCharity = req.body.charity;
@@ -62,7 +63,7 @@ var updateCharity = function(req,res) {
         }
     });
 }
-var updateScore = function(req,res) {
+exports.updateScore = function(req,res) {
     UserInfo.findOne({_id: req.cookies.userID},function(err,result) {
         if (!err) {
             result.score.paper += parseInt(req.body.Paper);
@@ -83,7 +84,7 @@ var updateScore = function(req,res) {
     })
 }
 
-var findOneUser = function(req,res){
+exports.findOneUser = function(req,res){
     var username = req.param.username;
     UserInfo.findOne({username: username},function(err,user) {
         if(!err && user!= null) {
@@ -94,19 +95,29 @@ var findOneUser = function(req,res){
     });
 };
 
+exports.getTop5Global = function(req,res,cb) {
+    UserInfo.find({},function(err,list) {
+        var top5 = [];
 
-var getUser = function(req,user) {
+        list.forEach(function(user) {
+            if (top5.length == 0) {
+                top5.push({"username":user.username,"profile":user.profilePicture,"total":user.score.total});
+            } else if (user.score.total >= top5[0].total) {
+                top5.unshift({"username":user.username,"profile":user.profilePicture,"total":user.score.total});
+            } else {
+                top5.push({"username":user.username,"profile":user.profilePicture,"total":user.score.total});
+            }
+
+        });
+        return cb(top5);
+    })
+}
+
+
+exports.getUser = function(req,user) {
     UserInfo.findOne({_id: req.cookies.userID},user);
 }
 
-var getCharities = function(req,charities) {
+exports.getCharities = function(req,charities) {
     Charities.findOne({},charities);
 }
-
-module.exports.createUser = createUser;
-module.exports.login = login;
-module.exports.updateScore = updateScore;
-module.exports.getUser = getUser;
-module.exports.getCharities = getCharities;
-module.exports.updateCharity = updateCharity;
-module.exports.findOneUser = findOneUser;

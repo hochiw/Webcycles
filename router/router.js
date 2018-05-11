@@ -16,6 +16,17 @@ router.post('/register', controller.createUser);
 router.post('/login', controller.login);
 router.post('/game/recycling', controller.updateScore);
 router.post('/game/charities', controller.updateCharity);
+router.get('/home',function(req,res) {
+    controller.getTop5Global(req,res,function(result) {
+        if (app.cookieCheck(req,res)) {
+            res.render('home',{top5Global:result});
+        } else {
+            res.redirect("/login");
+        }
+
+    });
+
+});
 router.get('/login',function(req,res) {
     res.render('login');
 });
@@ -24,7 +35,12 @@ router.get('/game/recycling',function(req,res) {
     if (req.query['msg']) {
         message = msgs[req.query['msg']]
     }
-    res.render('recycling',{msgs:message});
+    if (app.cookieCheck(req,res)) {
+        res.render('recycling',{msgs:message});
+    } else {
+        res.redirect('/login');
+    }
+
 });
 router.get('/game/charities',function(req,res) {
     controller.getCharities(req,function(err,charities) {

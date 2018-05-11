@@ -51,14 +51,15 @@
     border-radius: 25px 0;
 }
 .profilePicture {
-    background-size:cover;
-    background-position:50% 50%;
     height:100%;
     width:100%;
 }
 
-#Global > .ranking > .profilePicture {
-    background-image: url("content/resources/user1.png");
+.ranking > a > img {
+    height: 100%;
+    width:100%;
+    object-fit:cover;
+    border-radius: 25px;
 }
 
 #Friends > .ranking > .profilePicture {
