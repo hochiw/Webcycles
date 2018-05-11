@@ -7,6 +7,5 @@ function createProfilePic(source){
     var t = document.createTextNode("FRIEND");
     para.appendChild(t);
     var element = document.getElementById('row');
-    console.log(element)
     element.appendChild(para);
 }

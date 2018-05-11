@@ -32,15 +32,15 @@ html(lang='en')
                     .flex.navContainer.default
                         a.flex.nav(href='friends') Friends List
 
-                form.flex#searchContainer(action="/user", method="get")
+                form.flex#searchContainer(action="/user", method="post")
                     input(type="text", id="searchBox", name="username", placeholder="Search for user")
                     input(type="submit", style="visibility: hidden")
 
                 if(followed.length)
                     table#userTable
                         each item in followed
-                            form(id="form-id" method="get" action="/user")
-                                input(type="hidden" name="username" value=item)
+                            form(id="form-id" method="post" action="/user")
+                                input(type="hidden" name="username" value="item")
                             tr(onclick="document.getElementById('form-id').submit();")
                                 td#row(width="20%")
                                     img(align="center" width="100%" src="../site/css/content/resources/user1.png")

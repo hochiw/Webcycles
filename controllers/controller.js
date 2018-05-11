@@ -62,7 +62,25 @@ exports.updateCharity = function(req,res) {
             });
         }
     });
-}
+};
+
+exports.updateFollowed = function(req, res) {
+    var username = req.params.username;
+    UserInfo.findOne({_id: req.cookies.userID}, function(err, result) {
+        if(!err) {
+            user.followedList.push(username);
+            result.save(function(err) {
+                if(!err) {
+                    res.redirect("/game/friends?msg=103")
+                } else {
+                    res.redirect("/game/friends?msg=104")
+                }
+            })
+        }
+    });
+};
+
+
 exports.updateScore = function(req,res) {
     UserInfo.findOne({_id: req.cookies.userID},function(err,result) {
         if (!err) {
@@ -84,17 +102,11 @@ exports.updateScore = function(req,res) {
     })
 }
 
-exports.findOneUser = function(req,res){
-    var username = req.param.username;
-    UserInfo.findOne({username: username},function(err,user) {
-        if(!err && user!= null) {
-            res.send(user)
-        }else{
-            res.sendStatus(404);
-        }
-    });
-};
-
+exports.findOneUser = function(req, user) {
+    var username = req.body.username;
+    console.log(username);
+    UserInfo.findOne({username: username}, user);
+}
 exports.getTop5Global = function(req,res,cb) {
     UserInfo.find({},function(err,list) {
         var top5 = [];

@@ -74,15 +74,11 @@ app.get("/game/playerscore", function(req,res) {
     //if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/friends.html');};
 //});
 
-app.get("/user", function(req,res) {
-    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/user.html');};
-});
-
 app.get("/blog", function(req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/blog.html');};
 });
 
 
-const PORT = process.env.PORT || 3027;
+const PORT = process.env.PORT || 3033;
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 exports.cookieCheck = cookieCheck;

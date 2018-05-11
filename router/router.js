@@ -16,6 +16,9 @@ router.post('/register', controller.createUser);
 router.post('/login', controller.login);
 router.post('/game/recycling', controller.updateScore);
 router.post('/game/charities', controller.updateCharity);
+router.post('/user/:username', controller.updateFollowed);
+
+
 router.get('/home',function(req,res) {
     controller.getTop5Global(req,res,function(result) {
         if (app.cookieCheck(req,res)) {
@@ -78,9 +81,25 @@ router.get('/account',function(req,res) {
     });
 });
 
+router.post('/user', function (req, res) {
+    var username = req.body.username;
+    console.log(username);
+    controller.findOneUser(req, function(err, user) {
+        var score = user.score;
+        if(app.cookieCheck(req,res) && !err) res.render('otheraccount',{
+            papAmount:score.paper,
+            mAmount:score.metal,
+            plaAmount:score.plastic,
+            gAmount:score.glass,
+            profilePicture:user.profilePicture
+        });
+    });
+});
 
-router.get('/user/:name', function(req, res) {
-    return controller.findOneUser(req, function(err, user) {
+/*
+router.get('/user/:username', function(req, res) {
+    console.log(req.params.username);
+    controller.findOneUser(req, function(err, user) {
         var score = user.score;
         if(app.cookieCheck(req,res) && !err) res.render('account',{
             papAmount:score.paper,
@@ -91,11 +110,10 @@ router.get('/user/:name', function(req, res) {
         });
     });
 });
-
+*/
 
 router.get('/game/friends', function(req, res) {
     controller.getUser(req,function(err,user) {
-        console.log(user.username)
         if ( user.followedList === undefined || !user.followedList) {
             if(app.cookieCheck(req,res) && !err) res.render('friends', {
                 followed: []

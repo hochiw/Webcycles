@@ -1,0 +1,60 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Webcycles
+        link(rel='stylesheet', type='text/css', href='../site/css/border.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/user.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/charities.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/recycling.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/account.css')
+    body
+        .wrapper
+            a.box.logo(href='/home')
+            .box.leaderboard-banner
+            .box.sidebar
+                a.btn.Game(href='/game')
+                    .overlay Game
+                a.btn.Blog(href='/blog')
+                    .overlay Blog
+                a.btn.Account(href='/account')
+                    .overlay Account
+            .box.content
+                .flex.arrowcontainer
+                    a#backarrow(href='/game/friends')
+                .flex
+                    h3 User Profile
+                .flex.profileContainer
+                    .profilePicture
+                div
+                    .btnContainer#addUser
+                        button(value="Add User")
+                .btnContainer#blockUser
+                .button(value="Block User")
+                #playerDetails.flex
+                    span Player Details
+                #infoContainer
+                    #paper.materials
+                        h3 Paper
+                        #paperIcon.icon
+                        .amount
+                            p Amount
+                            p #{papAmount}
+                    #metal.materials
+                        h3 Metal
+                        #metalIcon.icon
+                        .amount
+                            p Amount
+                            p #{mAmount}
+                    #plastic.materials
+                        h3 Plastic
+                        #plasticIcon.icon
+                        .amount
+                            p Amount
+                            p #{plaAmount}
+                    #glass.materials
+                        h3 Glass
+                        #glassIcon.icon
+                        .amount
+                            p Amount
+                            p #{gAmount}
