@@ -4,8 +4,8 @@ html(lang='en')
         meta(charset='UTF-8')
         title Webcycles
         link(rel='stylesheet', type='text/css', href='../site/css/border.css')
-        link(rel='stylesheet', type='text/css', href='../site/css/charities.css')
         link(rel='stylesheet', type='text/css', href='../site/css/friends.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/charities.css')
         link(rel='stylesheet', type='text/css', href='../site/css/game.css')
     body
         .wrapper
@@ -32,7 +32,6 @@ html(lang='en')
                     .flex.navContainer.default
                         a.flex.nav(href='friends') Friends List
 
-
                 form.flex#searchContainer(action="/user", method="get")
                     input(type="text", id="searchBox", name="username", placeholder="Search for user")
                     input(type="submit", style="visibility: hidden")
@@ -40,9 +39,10 @@ html(lang='en')
                 if(followed.length)
                     table#userTable
                         each item in followed
-                            tr
+                            form(id="form-id" method="get" action="/user")
+                                input(type="hidden" name="username" value=item)
+                            tr(onclick="document.getElementById('form-id').submit();")
                                 td#row(width="20%")
-
+                                    img(align="center" width="100%" src="../site/css/content/resources/user1.png")
                                 td(width="80%")=item
-                            tr
         script(src="../site/js/Friends.js")
