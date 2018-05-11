@@ -124,6 +124,10 @@ a,a:hover, a:visited, a:link, a:active
     background-image: url("content/resources/account.jpg");
 }
 
+.alert {
+    color:red;
+}
+
 .flex {
     display:flex;
     align-items: center;

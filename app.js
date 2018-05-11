@@ -1,6 +1,5 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var socketIO = require('socket.io')
 var cookieParser = require('cookie-parser');
 var app = express();
 
@@ -38,10 +37,6 @@ app.get("/logout",function(req,res) {
     res.clearCookie("userID");
     res.redirect("/home");
 })
-
-app.get("/login", function(req,res) {
-    res.sendFile(__dirname + '/site/login.html');
-});
 
 app.get("/aboutus",function (req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/aboutus.html');};
@@ -93,18 +88,6 @@ app.get("/blog", function(req,res) {
 
 
 const PORT = process.env.PORT || 4000;
-const appServer = app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
-const io = socketIO(appServer);
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-io.on('connection',function(client) {
-    console.log('Client connected...');
-
-    client.on('join', function(data) {
-        console.log(data);
-    });
-
-    exports.socket = client;
-});
-
-exports.io = io;
 exports.cookieCheck = cookieCheck;

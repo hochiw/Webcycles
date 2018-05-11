@@ -1,0 +1,87 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Webcycles
+        link(rel='stylesheet', type='text/css', href='../site/css/border.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/recycling.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/game.css')
+    body
+        if msgs
+            .alert.flex #{msgs}
+        .wrapper
+            a.box.logo(href='/home')
+            .box.leaderboard-banner
+            .box.sidebar
+                a.btn.Game(href='/game')
+                    .overlay Game
+                a.btn.Blog(href='/blog')
+                    .overlay Blog
+                a.btn.Account(href='/account')
+                    .overlay Account
+            .box.content
+                .flex.arrowcontainer
+                    a#backarrow(href='/game')
+                .flex.gamenav
+                    .flex.navContainer
+                        a.flex.nav(href='playerscore') Playerscore
+                    .flex.navContainer.default
+                        a.flex.nav(href='recycling') Recycling
+                    .flex.navContainer
+                        a.flex.nav(href='charities') Charities
+                    .flex.navContainer
+                        a.flex.nav(href='friends') Friends List
+                #infoContainer
+                    #paper.materials
+                        h1 Paper
+                        #paperIcon.icon
+                        p
+                            | Added:
+                            span#papTotal 0
+                        div
+                            input#papInput.convert-value(type='number', value='0', name='quantity', min='0', max='1000', oninput="input(this,'papRange','papTotal','paperForm');")
+                            .slidecontainer
+                                input#papRange.slider(type='range', min='0', max='1000', value='0', step='1', oninput="slider(this,'papInput','papTotal','paperForm')")
+                    #metal.materials
+                        h1 Metal
+                        #metalIcon.icon
+                        p
+                            | Added:
+                            span#mTotal 0
+                        div
+                            input#mInput.convert-value(type='number', value='0', name='quantity', min='0', max='1000', oninput="input(this,'mRange','mTotal','metalForm');")
+                            .slidecontainer
+                                input#mRange.slider(type='range', min='0', max='1000', value='0', step='1', oninput="slider(this,'mInput','mTotal','metalForm')")
+                    #plastic.materials
+                        h1 Plastic
+                        #plasticIcon.icon
+                        p
+                            | Added:
+                            span#plaTotal 0
+                        div
+                            input#plaInput.convert-value(type='number', value='0', name='quantity', min='0', max='1000', oninput="input(this,'plaRange','plaTotal','plasticForm')")
+                            .slidecontainer
+                                input#plaRange.slider(type='range', min='0', max='1000', value='0', step='1', oninput="slider(this,'plaInput','plaTotal','plasticForm')")
+                    #glass.materials
+                        h1 Glass
+                        #glassIcon.icon
+                        p
+                            | Added:
+                            span#gTotal 0
+                        div
+                            input#gInput.convert-value(type='number', value='0', name='quantity', min='0', max='1000', oninput="input(this,'gRange','gTotal','glassForm')")
+                            .slidecontainer
+                                input#gRange.slider(type='range', min='0', max='1000', value='0', step='1', oninput="slider(this,'gInput','gTotal','glassForm')")
+                .flex.convertContainer
+                    p
+                        | Total points to convert:
+                        span#total 0
+                #convertBtnContainer.flex
+                    form#convertRequest(action='/game/recycling', method='post')
+                        input#paperForm(type='hidden', name='Paper', value='0')
+                        input#metalForm(type='hidden', name='Metal', value='0')
+                        input#plasticForm(type='hidden', name='Plastic', value='0')
+                        input#glassForm(type='hidden', name='Glass', value='0')
+                        input#totalForm(type='hidden', name='Total', value='0')
+                        input#convertBtn(type='submit', value='Submit')
+    script(src='../site/js/recycling.js')
