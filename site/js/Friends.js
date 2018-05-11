@@ -1,6 +1,8 @@
-function createAction(){
-    var action_src = "/user/" + document.getElementById("searchBox").value;
-    var your_form = document.getElementById('searchContainer');
-    your_form.action = action_src;
-    console.log(action_src)
+function createProfilePic(source){
+    var img = document.createElement("img")
+    img.src = source;
+    img.align="center"
+    img.width="100%"
+    var element = document.getElementById('row');
+    element.appendChild(img);
 }
