@@ -27,9 +27,9 @@ html(lang='en')
                         a.flex.nav(href='playerscore') Playerscore
                     .flex.navContainer
                         a.flex.nav(href='recycling') Recycling
-                    .flex.navContainer.default
-                        a.flex.nav(href='charities') Charities
                     .flex.navContainer
+                        a.flex.nav(href='charities') Charities
+                    .flex.navContainer.default
                         a.flex.nav(href='friends') Friends List
 
 
@@ -39,10 +39,11 @@ html(lang='en')
 
 
                 table#usertable
-                    tr
-                        td(width="20%")
-                            p Hello
+                    each item in followed
+                        tr
+                            td(width="20%")
+                                p Hello
 
-                        td(width="80%")
-                            p Goodbye
-                    tr
+                            td(width="80%")
+                                p Goodbye
+                        tr
