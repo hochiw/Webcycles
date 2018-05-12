@@ -105,8 +105,6 @@ router.get('/account/settings/changepassword', function(req,res) {
 
 });
 
-
-
 router.get('/home',function(req,res) {
     controller.getTop5Friend(req,res,function(friends) {
         controller.getTop5Global(req,res,function(global) {
@@ -117,8 +115,8 @@ router.get('/home',function(req,res) {
             }
         });
     });
-
 });
+
 router.get('/login',function(req,res) {
     res.render('login');
 });
@@ -175,6 +173,9 @@ router.post('/user', function (req, res) {
         if(user==null) {
             res.redirect('/game/friends?msg=404');
         }
+        else if(req.body.username == user.username) {
+            res.redirect('/game/friends?msg=204')
+        }
         else {
             var score = user.score;
             var username = user.username;
@@ -193,20 +194,19 @@ router.post('/user', function (req, res) {
 });
 
 router.get('/game/friends', function(req, res) {
-    controller.getUser(req,function(err,user) {
+    controller.getFollowed(req, res, function(friends) {
         var message = null;
         if (req.query['msg']) {
             message = msgs[req.query['msg']]
         }
 
-        if (app.cookieCheck(req, res) && !err) res.render('friends', {
-            followed: user.followedList,
+        if (app.cookieCheck(req, res)) res.render('friends', {
+            followed: friends,
             msg: message
         });
         else {
             res.redirect('/login')
         }
-
     });
 });
 

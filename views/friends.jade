@@ -42,10 +42,11 @@ html(lang='en')
                 table#userTable
                     if followed
                         each item in followed
-                            form(id="#{item}" method="post" action="/user")
-                                input(type="hidden" name="username" value= "#{item}" )
-                            tr(onclick="document.getElementById('#{item}').submit();")
-                                td#row(width="20%")
-                                    img(align="center" width="100%" src="../site/css/content/resources/user1.png")
-                                td(width="80%")=item
+                            form(id="#{item.username}+123" method="post" action="/user")
+                                input(type="hidden" name="username" value= item.username )
+                            tr(onclick="document.getElementById('#{item.username}+123').submit();")
+                            td(width="20%")
+                                img(align="center" width="100%" src=item.profile)
+                            td(width="80%")=item.username
+
 

@@ -27,9 +27,7 @@ exports.createUser = function(req,res) {
             res.render('login',{reg_fail_msg:"Account or Email already exists"});
         }
     });
-
-
-}
+};
 
 
 exports.login = function(req,res) {
@@ -355,6 +353,21 @@ exports.changePassword = function(req, res) {
         }
         else {
             res.redirect('/account/settings/changepassword?msg=104');
+        }
+    });
+};
+
+exports.getFollowed = function(req, res, followed) {
+    UserInfo.findOne({_id: req.cookies.userID}, function(err,user) {
+        if (!err && user != null) {
+            var list = user.followedList;
+            UserInfo.find({'username': {$in: list}}, function (err, users) {
+                var friends = [];
+                users.forEach(function (user) {
+                    friends.push({"username": user.username, "profile": user.profilePicture})
+                });
+                return followed(friends);
+            });
         }
     });
 };

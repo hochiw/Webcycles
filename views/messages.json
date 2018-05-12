@@ -10,6 +10,6 @@
   "111": "Postal Code must be different to existing",
   "112": "Incorrect current password submitted",
   "113": "Passwords do not match",
-  "204": "User not found",
+  "204": "Cannot Follow Yourself",
   "404": "User does not exist"
 }
