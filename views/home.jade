@@ -27,7 +27,7 @@ html(lang='en')
                     #Friends.leaderboardTab
                         - for (var i = 0; i < top5Friends.length; ++i) {
                         .ranking(class="rank" + (i + 1))
-                            a.profilePicture(href="/user?username=" + top5Friends[i].username)
+                            a.profilePicture
                                 img(src=top5Friends[i].profile)
                                 .flex.overlayR #{'#' + (i + 1)}
                                 .flex.overlayR.overlayN #{top5Friends[i].username}
@@ -35,7 +35,7 @@ html(lang='en')
                     #Global.leaderboardTab
                         - for (var i = 0; i < top5Global.length; ++i) {
                         .ranking(class="rank" + (i + 1))
-                            a.profilePicture(href="/user?username=" + top5Global[i].username)
+                            a.profilePicture
                                 img(src=top5Global[i].profile)
                                 .flex.overlayR #{'#'+ (i + 1)}
                                 .flex.overlayR.overlayN #{top5Global[i].username}
