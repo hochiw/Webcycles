@@ -30,15 +30,24 @@ html(lang='en')
                     if name
                         form(action="/changeUsername", method="post")
                             input(type="text", id="newUsername", class="textFormBox" name="newUsername", required)
+                            br
+                            br                            input(type="submit")
+                            input(id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel")
+
+                    else if postalCode || postalCode == 0
+                        form(action="/changePostal", method="post")
+                            input(type="text", id="newPostal", class="textFormBox" name="newPostal", required pattern="[0-9]{4}")
+                            br
+                            br
                             input(type="submit")
                             input(id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel")
-                    else if  email
+
+                    else if email
                         form(action="/changeEmail", method="post")
                             input(type="email", id="newEmail", class="textFormBox" name="newEmail", required)
+                            br
+                            br
                             input(type="submit")
                             input(id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel")
-                    else if  postal
-                        form(action="/changePostal", method="post")
-                            input(type="text", id="newPostal", class="textFormBox" name="newUsername", required)
-                            input(type="submit")
-                            input(id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel")
+
+

@@ -7,6 +7,9 @@
   "108": "Username already exists",
   "109":"Email must be different to current email",
   "110": "Email already exists",
+  "111": "Postal Code must be different to existing",
+  "112": "Incorrect current password submitted",
+  "113": "Passwords do not match",
   "204": "User not found",
   "404": "User does not exist"
 }

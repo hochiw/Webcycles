@@ -42,18 +42,6 @@ app.get("/account/settings", function(req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/settings.html');};
 });
 
-app.get("/account/settings/changepassword", function(req,res) {
-    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/changepassword.html');};
-});
-
-app.get("/account/settings/changeemail", function(req,res) {
-    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/changeemail.html');};
-});
-
-app.get("/account/settings/changepostal", function(req,res) {
-    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/changepostal.html');};
-});
-
 app.get("/game", function(req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/game.html');};
 });
@@ -65,10 +53,6 @@ app.get("/game/recycling", function(req,res) {
 app.get("/game/playerscore", function(req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/playerscore.html');};
 });
-
-//app.get("/game/friends", function(req,res) {
-    //if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/friends.html');};
-//});
 
 app.get("/blog", function(req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/blog.html');};

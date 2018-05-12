@@ -20,53 +20,92 @@ router.post('/game/addFollow', controller.addFollowed);
 router.post('/game/removeFollow', controller.removeFollowed);
 router.post('/changeUsername', controller.changeUsername);
 router.post('/changeEmail', controller.changeEmail);
+router.post('/changePostal', controller.changePostal);
+router.post('/changePassword', controller.changePassword);
 
 router.get('/account/settings/changeusername', function(req,res) {
-    if (app.cookieCheck(req, res)) {
-        controller.getUser(req,function(err,user) {
-            if(app.cookieCheck(req, res) && !err) {
-                var message = null;
-                if (req.query['msg']) {
-                    message = msgs[req.query['msg']]
-                }
-                var username = user.username;
-                res.render('changeattribute', {
-                    current: username,
-                    msg: message,
-                    operation: "Username",
-                    name: username
-                });
+    controller.getUser(req,function(err,user) {
+        if(app.cookieCheck(req, res) && !err) {
+            var message = null;
+            if (req.query['msg']) {
+                message = msgs[req.query['msg']]
             }
-            else {
-                res.redirect('/login');
-            }
-        });
-    }
+            var username = user.username;
+            res.render('changeattribute', {
+                current: username,
+                msg: message,
+                operation: "Username",
+                name: username
+            });
+        }
+        else {
+            res.redirect('/login');
+        }
+    });
+
 });
 
 router.get('/account/settings/changeemail', function(req,res) {
-    if (app.cookieCheck(req, res)) {
-        controller.getUser(req,function(err,user) {
-            if(app.cookieCheck(req, res) && !err) {
-                var message = null;
-                if (req.query['msg']) {
-                    message = msgs[req.query['msg']]
-                }
-                var current = user.email;
-                console.log(current);
-                res.render('changeattribute', {
-                    current: current,
-                    msg: message,
-                    operation: "Email",
-                    email: current
-                });
+    controller.getUser(req,function(err,user) {
+        if(app.cookieCheck(req, res) && !err) {
+            var message = null;
+            if (req.query['msg']) {
+                message = msgs[req.query['msg']]
             }
-            else {
-                res.redirect('/login');
-            }
-        });
-    }
+            var current = user.email;
+            res.render('changeattribute', {
+                current: current,
+                msg: message,
+                operation: "Email",
+                email: current
+            });
+        }
+        else {
+            res.redirect('/login');
+        }
+    });
 });
+
+router.get('/account/settings/changepostal', function(req,res) {
+    controller.getUser(req,function(err,user) {
+        if(app.cookieCheck(req, res) && !err) {
+            var message = null;
+            if (req.query['msg']) {
+                message = msgs[req.query['msg']]
+            }
+            var current = user.postcode;
+            res.render('changeattribute', {
+                current: current,
+                msg: message,
+                operation: "Postal",
+                postalCode: current
+            });
+        }
+        else {
+            res.redirect('/login');
+        }
+    });
+});
+
+router.get('/account/settings/changepassword', function(req,res) {
+    controller.getUser(req,function(err,user) {
+        if(app.cookieCheck(req, res) && !err) {
+            var message = null;
+            if (req.query['msg']) {
+                message = msgs[req.query['msg']]
+            }
+            res.render('changepassword', {
+                msg: message
+            });
+        }
+        else {
+            res.redirect('/login');
+        }
+    });
+
+});
+
+
 
 router.get('/home',function(req,res) {
     controller.getTop5Friend(req,res,function(friends) {
@@ -140,7 +179,6 @@ router.post('/user', function (req, res) {
             var score = user.score;
             var username = user.username;
             var profilePicPath = user.profilePicture;
-            console.log(username);
             if (app.cookieCheck(req, res) && !err) res.render('otheraccount', {
                 name: username,
                 path: profilePicPath,
@@ -154,13 +192,11 @@ router.post('/user', function (req, res) {
     });
 });
 
-
 router.get('/game/friends', function(req, res) {
     controller.getUser(req,function(err,user) {
         var message = null;
         if (req.query['msg']) {
             message = msgs[req.query['msg']]
-            console.log(message)
         }
 
         if (app.cookieCheck(req, res) && !err) res.render('friends', {

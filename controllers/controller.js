@@ -66,7 +66,6 @@ exports.updateCharity = function(req,res) {
 
 exports.addFollowed = function(req, res) {
     var username = req.body.username;
-    console.log(username);
     UserInfo.findOne({_id: req.cookies.userID}, function(err, user) {
         if(!err) {
             if(user.followedList.includes(username)) {
@@ -259,6 +258,103 @@ exports.changeEmail = function(req, res) {
         }
         else {
             res.redirect('/account/settings/changeemail?msg=104');
+        }
+    });
+};
+
+exports.changeEmail = function(req, res) {
+    var newEmail = req.body.newEmail;
+    UserInfo.findOne({_id: req.cookies.userID}, function (err, user) {
+        if (!err) {
+            UserInfo.find({email: newEmail}, function (err, anyuser) {
+                if (!err && !anyuser.length) {
+                    if (newEmail == user.email) {
+                        res.redirect('/account/settings/changeemail?msg=109');
+                    }
+                    else {
+                        user.email = newEmail;
+                        user.save(function(err) {
+                            if (!err) {
+                                res.redirect('/account/settings/changeemail?msg=103');
+                            }
+                            else {
+                                res.redirect('/account/settings/changeemail?msg=104');
+                            }
+                        });
+                    }
+                }
+                else if (anyuser.length) {
+                    res.redirect('/account/settings/changeemail?msg=110');
+                }
+
+                else {
+                    res.redirect('/account/settings/changeemail?msg=104');
+                }
+            });
+        }
+        else {
+            res.redirect('/account/settings/changeemail?msg=104');
+        }
+    });
+};
+
+exports.changePostal = function(req, res) {
+    var newPostal = req.body.newPostal;
+    UserInfo.findOne({_id: req.cookies.userID}, function (err, user) {
+        if (!err) {
+            if (newPostal == user.postcode) {
+                    res.redirect('/account/settings/changepostal?msg=109');
+                }
+            else {
+                user.postcode = newPostal;
+                user.save(function(err) {
+                    if (!err) {
+                        res.redirect('/account/settings/changepostal?msg=103');
+                    }
+                    else {
+                        res.redirect('/account/settings/changepostal?msg=104');
+                    }
+                });
+            }
+        }
+        else {
+            res.redirect('/account/settings/changepostal?msg=104');
+        }
+    });
+};
+
+exports.changePassword = function(req, res) {
+    var currPassword = req.body.currentPassword;
+    var newPassword = req.body.newPassword;
+    var confirmPassword = req.body.confirmPassword;
+    console.log(currPassword);
+
+    UserInfo.findOne({_id: req.cookies.userID}, function (err, user) {
+        if (!err) {
+            if (passwordHash.verify(currPassword, user.password) && newPassword == confirmPassword) {
+                user.password = passwordHash.generate(newPassword);
+                user.save(function(err) {
+                    if (!err) {
+                        res.redirect('/account/settings/changepassword?msg=103');
+                    }
+                    else {
+                        res.redirect('/account/settings/changepassword?msg=104');
+                    }
+                });
+            }
+            else if (!passwordHash.verify(currPassword, user.password)){
+                console.log(passwordHash.generate(currPassword));
+                console.log(passwordHash.generate(user.password));
+
+                res.redirect('/account/settings/changepassword?msg=112');
+            }
+
+            else {
+                res.redirect('/account/settings/changepassword?msg=113');
+            }
+        }
+        else {
+            res.redirect('/account/settings/changepassword?msg=104');
         }
     });
 };
