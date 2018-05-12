@@ -94,7 +94,7 @@ router.get('/account/settings/changepassword', function(req,res) {
             if (req.query['msg']) {
                 message = msgs[req.query['msg']]
             }
-            res.render('changepassword', {
+            res.render('changePassword', {
                 msg: message
             });
         }
