@@ -4,6 +4,7 @@ var UserInfo = mongoose.Schema(
         "username": {type: String},
         "password": {type: String},
         "email": {type: String},
+        "postcode": {type: Number, default: 0},
         "profilePicture": {type:String,default:"../site/css/content/resources/user1.png"},
         "selectedCharity": {
             type: Number,
