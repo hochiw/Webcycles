@@ -1,0 +1,33 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Webcycles
+        link(rel='stylesheet', type='text/css', href='../site/css/border.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/friends.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/charities.css')
+        link(rel='stylesheet', type='text/css', href='../site/css/game.css')
+    body
+        if msg
+            .alert.flex #{msg}
+        .wrapper
+            a.box.logo(href='/home')
+            .box.leaderboard-banner
+            .box.sidebar
+                a.btn.Game(href='/game')
+                    .overlay Game
+                a.btn.Blog(href='/blog')
+                    .overlay Blog
+                a.btn.Account(href='/account')
+                    .overlay Account
+        .flex.content
+            .inputContainer
+                .text
+                    h1 Change Username
+                    h2 Current Username:
+                    p #{username}
+                br
+                form(action="/changeUsername", method="post")
+                    input(type="text", id="newUsername", class="textFormBox" name="newUsername", required)
+                    input(type="submit")
+                    input(id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel")
