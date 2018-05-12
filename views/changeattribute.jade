@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Webcycles
+        link(rel='stylesheet', type='text/css', href='../../site/css/border.css')
+        link(rel='stylesheet', type='text/css', href='../../site/css/settings.css')
+        link(rel='stylesheet', type='text/css', href='../../site/css/editinfo.css')
+    body
+        if msg
+            .alert.flex #{msg}
+        .wrapper
+            a.box.logo(href='/home')
+            .box.leaderboard-banner
+            .box.sidebar
+                a.btn.Game(href='/game')
+                    .overlay Game
+                a.btn.Blog(href='/blog')
+                    .overlay Blog
+                a.btn.Account(href='/account')
+                    .overlay Account
+            .flex.content
+                .inputContainer
+                    .text
+                        h1 Change #{operation}
+                        h2 Current #{operation}:
+                        p #{current}
+                    br
+
+                    if name
+                        form(action="/changeUsername", method="post")
+                            input(type="text", id="newUsername", class="textFormBox" name="newUsername", required)
+                            input(type="submit")
+                            input(id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel")
+                    else if  email
+                        form(action="/changeEmail", method="post")
+                            input(type="text", id="newEmail", class="textFormBox" name="newEmail", required)
+                            input(type="submit")
+                            input(id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel")
+                    else if  postal
+                        form(action="/changePostal", method="post")
+                            input(type="text", id="newPostal", class="textFormBox" name="newUsername", required)
+                            input(type="submit")
+                            input(id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel")

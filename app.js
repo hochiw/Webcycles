@@ -42,10 +42,6 @@ app.get("/account/settings", function(req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/settings.html');};
 });
 
-app.get("/account/settings/changeusername", function(req,res) {
-    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/changeusername.html');};
-});
-
 app.get("/account/settings/changepassword", function(req,res) {
     if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/changepassword.html');};
 });

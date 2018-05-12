@@ -40,7 +40,7 @@ html(lang='en')
 
 
                 table#userTable
-                    if(followed.length)
+                    if followed
                         each item in followed
                             form(id="#{item}" method="post" action="/user")
                                 input(type="hidden" name="username" value= "#{item}" )

@@ -3,6 +3,10 @@
   "104":"Error: Unable to update account",
   "105": "User already followed",
   "106": "User not followed",
+  "107": "Username must be different to current username",
+  "108": "Username already exists",
+  "109":"Email must be different to current email",
+  "110": "Email already exists",
   "204": "User not found",
   "404": "User does not exist"
 }

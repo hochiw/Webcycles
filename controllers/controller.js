@@ -38,8 +38,8 @@ exports.login = function(req,res) {
     UserInfo.findOne({username: username},function(err,user) {
         if (!err && user != null) {
             if (passwordHash.verify(req.body.password,user.password)) {
-                res.cookie('userID',user.id, { maxAge: 900000});
-                res.cookie('username',username,{ maxAge: 900000})
+                res.cookie('userID',user.id);
+                res.cookie('username',username);
                 res.redirect("/home");
             } else {
                 res.render('login',{log_fail_msg:"Password is incorrect."});
@@ -185,8 +185,80 @@ exports.removeFollowed = function(req, res) {
 
 exports.getUser = function(req,user) {
     UserInfo.findOne({_id: req.cookies.userID},user);
-}
+};
 
 exports.getCharities = function(req,charities) {
     Charities.findOne({},charities);
-}
+};
+
+exports.changeUsername = function(req, res) {
+    var newUsername = req.body.newUsername;
+    UserInfo.findOne({_id: req.cookies.userID}, function (err, user) {
+        if (!err) {
+            UserInfo.find({$or: [{username: newUsername}]}, function (err, anyuser) {
+                if (!err && !anyuser.length) {
+                    if (newUsername == user.username) {
+                        res.redirect('/account/settings/changeusername?msg=107');
+                    }
+                    else {
+                        user.username = newUsername;
+                        user.save(function(err) {
+                            if (!err) {
+                                res.redirect('/account/settings/changeusername?msg=103');
+                            }
+                            else {
+                                res.redirect('/account/settings/changeusername?msg=104');
+                            }
+                        });
+                    }
+                }
+                else if (anyuser.length) {
+                    res.redirect('/account/settings/changeusername?msg=108');
+                }
+
+                else {
+                    res.redirect('/account/settings/changeusername?msg=104');
+                }
+            });
+        }
+        else {
+            res.redirect('/account/settings/changeusername?msg=104');
+        }
+    });
+};
+
+exports.changeEmail = function(req, res) {
+    var newEmail = req.body.newEmail;
+    UserInfo.findOne({_id: req.cookies.userID}, function (err, user) {
+        if (!err) {
+            UserInfo.find({email: newEmail}, function (err, anyuser) {
+                if (!err && !anyuser.length) {
+                    if (newEmail == user.email) {
+                        res.redirect('/account/settings/changeemail?msg=109');
+                    }
+                    else {
+                        user.email = newEmail;
+                        user.save(function(err) {
+                            if (!err) {
+                                res.redirect('/account/settings/changeemail?msg=103');
+                            }
+                            else {
+                                res.redirect('/account/settings/changeemail?msg=104');
+                            }
+                        });
+                    }
+                }
+                else if (anyuser.length) {
+                    res.redirect('/account/settings/changeemail?msg=110');
+                }
+
+                else {
+                    res.redirect('/account/settings/changeemail?msg=104');
+                }
+            });
+        }
+        else {
+            res.redirect('/account/settings/changeemail?msg=104');
+        }
+    });
+};
