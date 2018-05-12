@@ -104,7 +104,6 @@ exports.updateScore = function(req,res) {
 
 exports.findOneUser = function(req, user) {
     var username = req.body.username;
-    console.log(username);
     UserInfo.findOne({username: username}, user);
 }
 
