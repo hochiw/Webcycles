@@ -40,13 +40,14 @@ html(lang='en')
 
 
                 table#userTable
-                    if followed
+                    if followed.length
                         each item in followed
                             form(id="#{item.username}+123" method="post" action="/user")
                                 input(type="hidden" name="username" value= item.username )
-                            tr(onclick="document.getElementById('#{item.username}+123').submit();")
-                            td(width="20%")
+                            tr()
+                            td(width="20%", height="100%", onclick="document.getElementById('#{item.username}+123').submit();")
                                 img(align="center" width="100%" src=item.profile)
-                            td(width="80%")=item.username
+                            td(width="80%", onclick="document.getElementById('#{item.username}+123').submit();")=item.username
 
-
+                    else
+                        tbody

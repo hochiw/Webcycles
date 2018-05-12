@@ -173,7 +173,7 @@ router.post('/user', function (req, res) {
         if(user==null) {
             res.redirect('/game/friends?msg=404');
         }
-        else if(req.body.username == user.username) {
+        else if(req.cookies.username == user.username) {
             res.redirect('/game/friends?msg=204')
         }
         else {
