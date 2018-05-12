@@ -34,7 +34,7 @@ html(lang='en')
                             input(id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel")
                     else if  email
                         form(action="/changeEmail", method="post")
-                            input(type="text", id="newEmail", class="textFormBox" name="newEmail", required)
+                            input(type="email", id="newEmail", class="textFormBox" name="newEmail", required)
                             input(type="submit")
                             input(id="cancel" type="button" onClick="location.href ='../settings'" value="Cancel")
                     else if  postal
