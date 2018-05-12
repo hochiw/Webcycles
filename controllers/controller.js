@@ -64,22 +64,32 @@ exports.updateCharity = function(req,res) {
     });
 };
 
-exports.updateFollowed = function(req, res) {
-    var username = req.params.username;
-    UserInfo.findOne({_id: req.cookies.userID}, function(err, result) {
+exports.addFollowed = function(req, res) {
+    var username = req.body.username;
+    console.log(username);
+    UserInfo.findOne({_id: req.cookies.userID}, function(err, user) {
         if(!err) {
-            user.followedList.push(username);
-            result.save(function(err) {
-                if(!err) {
-                    res.redirect("/game/friends?msg=103")
-                } else {
-                    res.redirect("/game/friends?msg=104")
-                }
-            })
+            if(user.followedList.includes(username)) {
+               res.redirect("/game/friends?msg=106");
+            }
+            else {
+                user.followedList.push(req.body.username);
+                user.save(function(err) {
+                    if (!err) {
+                        res.redirect("/game/friends");
+                    } else {
+                        console.log(err);
+                        res.redirect("/game/friends?msg=104");
+                    }
+                })
+            }
+        }
+        else {
+            console.log(err);
+            res.redirect("/game/friends?msg=104");
         }
     });
 };
-
 
 exports.updateScore = function(req,res) {
     UserInfo.findOne({_id: req.cookies.userID},function(err,result) {
@@ -118,11 +128,10 @@ exports.getTop5Global = function(req,res,cb) {
             } else {
                 top5.push({"username":user.username,"profile":user.profilePicture,"total":user.score.total});
             }
-
         });
         return cb(top5);
     })
-}
+};
 
 exports.getTop5Friend = function(req,res,cb) {
     UserInfo.findOne({_id: req.cookies.userID}, function(err,user) {
@@ -143,17 +152,37 @@ exports.getTop5Friend = function(req,res,cb) {
 
             })
 
-        };
+        }
     });
+};
 
+exports.removeFollowed = function(req, res) {
+    var username = req.body.username;
+    UserInfo.findOne({_id: req.cookies.userID}, function(err, user) {
+        if(!err) {
+            if(!user.followedList.includes(username)) {
+                res.redirect("/game/friends?msg=106");
+            }
+            else {
+                var index = user.followedList.indexOf(username);
+                user.followedList.splice(index, 1);
+                user.save(function(err) {
+                    if (!err) {
+                        res.redirect("/game/friends");
+                    } else {
+                        console.log(err);
+                        res.redirect("/game/friends?msg=104");
+                    }
+                })
+            }
+        }
+        else {
+            console.log(err);
+            res.redirect("/game/friends?msg=104");
+        }
+    });
+};
 
-}
-
-var getUserbyName = function(req,res,cb,name) {
-    UserInfo.findOne({username:name},function(err,user) {
-        return cb(user);
-    })
-}
 exports.getUser = function(req,user) {
     UserInfo.findOne({_id: req.cookies.userID},user);
 }

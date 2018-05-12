@@ -26,11 +26,15 @@ html(lang='en')
                     h3 User Profile
                 .flex.profileContainer
                     .profilePicture
-                div
-                    .btnContainer#addUser
-                        button(value="Add User")
-                .btnContainer#blockUser
-                .button(value="Block User")
+                        img(src="#{path}")
+                form(id="follower", action="/game/addFollow", method="post")
+                    input(type="hidden", name="username", value="#{name}")
+                .btnContainer#addUser
+                    button(onclick="document.getElementById('follower').submit();") Follow #{name}
+                form(id="remove", action="/game/removeFollow", method="post")
+                    input(type="hidden", name="username", value="#{name}")
+                #blockUser.btnContainer
+                    button(onclick="document.getElementById('remove').submit();") Remove #{name}
                 #playerDetails.flex
                     span Player Details
                 #infoContainer

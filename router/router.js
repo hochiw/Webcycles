@@ -16,7 +16,8 @@ router.post('/register', controller.createUser);
 router.post('/login', controller.login);
 router.post('/game/recycling', controller.updateScore);
 router.post('/game/charities', controller.updateCharity);
-router.post('/user/:username', controller.updateFollowed);
+router.post('/game/addFollow', controller.addFollowed);
+router.post('/game/removeFollow', controller.removeFollowed)
 
 
 router.get('/home',function(req,res) {
@@ -84,45 +85,44 @@ router.get('/account',function(req,res) {
 
 router.post('/user', function (req, res) {
     controller.findOneUser(req, function(err, user) {
-        var score = user.score;
-        if(app.cookieCheck(req,res) && !err) res.render('otheraccount',{
-            papAmount:score.paper,
-            mAmount:score.metal,
-            plaAmount:score.plastic,
-            gAmount:score.glass,
-            profilePicture:user.profilePicture
-        });
+        if(user==null) {
+            res.redirect('/game/friends?msg=404');
+        }
+        else {
+            var score = user.score;
+            var username = user.username;
+            var profilePicPath = user.profilePicture;
+            console.log(username);
+            if (app.cookieCheck(req, res) && !err) res.render('otheraccount', {
+                name: username,
+                path: profilePicPath,
+                papAmount: score.paper,
+                mAmount: score.metal,
+                plaAmount: score.plastic,
+                gAmount: score.glass,
+                profilePicture: user.profilePicture
+            });
+        }
     });
 });
 
-/*
-router.get('/user/:username', function(req, res) {
-    console.log(req.params.username);
-    controller.findOneUser(req, function(err, user) {
-        var score = user.score;
-        if(app.cookieCheck(req,res) && !err) res.render('account',{
-            papAmount:score.paper,
-            mAmount:score.metal,
-            plaAmount:score.plastic,
-            gAmount:score.glass,
-            profilePicture:user.profilePicture
-        });
-    });
-});
-*/
 
 router.get('/game/friends', function(req, res) {
     controller.getUser(req,function(err,user) {
-        if ( user.followedList === undefined || !user.followedList) {
-            if(app.cookieCheck(req,res) && !err) res.render('friends', {
-                followed: []
-            });
+        var message = null;
+        if (req.query['msg']) {
+            message = msgs[req.query['msg']]
+            console.log(message)
         }
+
+        if (app.cookieCheck(req, res) && !err) res.render('friends', {
+            followed: user.followedList,
+            msg: message
+        });
         else {
-            if (app.cookieCheck(req, res) && !err) res.render('friends', {
-                followed: user.followedList
-            });
+            res.redirect('/login')
         }
+
     });
 });
 

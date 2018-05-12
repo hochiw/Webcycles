@@ -1,4 +1,8 @@
 {
   "103":"Account Updated",
-  "104":"Error: Unable to update account"
+  "104":"Error: Unable to update account",
+  "105": "User already followed",
+  "106": "User not followed",
+  "204": "User not found",
+  "404": "User does not exist"
 }
