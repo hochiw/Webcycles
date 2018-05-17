@@ -51,7 +51,7 @@ app.get("/game/recycling", function(req,res) {
 });
 
 app.get("/game/playerscore", function(req,res) {
-    if(cookieCheck(req,res)) {res.sendFile(__dirname + '/site/playerscore.html');};
+    res.redirect("/account");
 });
 
 app.get("/blog", function(req,res) {
