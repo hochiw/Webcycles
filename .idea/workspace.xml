@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3833e28f-b795-4fc1-b78b-223a23b67a94" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/site/css/friends.css" afterPath="$PROJECT_DIR$/site/css/friends.css" />
-      <change beforePath="$PROJECT_DIR$/views/friends.jade" afterPath="$PROJECT_DIR$/views/friends.jade" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,18 +39,18 @@
       <file leaf-file-name="friends.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/site/css/friends.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="61" column="18" lean-forward="false" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+            <state relative-caret-position="63">
+              <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="friends.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/site/friends.html">
+      <file leaf-file-name="border.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/site/css/border.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1590">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="441">
+              <caret line="42" column="1" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="42" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -61,7 +59,7 @@
       <file leaf-file-name="friends.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/friends.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
+            <state relative-caret-position="475">
               <caret line="52" column="35" lean-forward="false" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
               <folding />
             </state>
@@ -151,12 +149,14 @@
       <find>area</find>
       <find>grid</find>
       <find>flex</find>
-      <find>overflow</find>
       <find>findOneUser</find>
       <find>id</find>
       <find>display</find>
-      <find>overflow-y</find>
       <find>user</find>
+      <find>overflow</find>
+      <find>overflow-y</find>
+      <find>color</find>
+      <find>table</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -377,12 +377,12 @@
       <workItem from="1525846737342" duration="7103000" />
       <workItem from="1525867426012" duration="3442000" />
       <workItem from="1527121954902" duration="3006000" />
-      <workItem from="1527144400738" duration="3734000" />
+      <workItem from="1527144400738" duration="4682000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91223000" />
+    <option name="totallyTimeSpent" value="92171000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -567,13 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site/css/border.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1986">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../site/site/blog_new.html" />
     <entry file="file://$PROJECT_DIR$/../../site/site/blog.css" />
     <entry file="file://$PROJECT_DIR$/site/blog_new.html" />
@@ -692,16 +685,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/friends.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
+        <state relative-caret-position="475">
           <caret line="52" column="35" lean-forward="false" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/css/border.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="42" column="1" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="42" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/site/css/friends.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="61" column="18" lean-forward="false" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+        <state relative-caret-position="63">
+          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
           <folding />
         </state>
       </provider>

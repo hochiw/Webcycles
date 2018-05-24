@@ -1,7 +1,9 @@
 html {
-    overflow-y: scroll;
+    overflow-y:scroll;
 }
-
+.content {
+    overflow-y:scroll;
+}
 #searchContainer {
     grid-row: 2;
     grid-column: 2/span 3;
@@ -20,8 +22,11 @@ html {
 }
 
 #userTable {
-    grid-row:3/span 6;
+    grid-row:4/span 5;
     grid-column: 2/span 11;
+    background:rgba(134, 206, 236, 0.7);
+    border-collapse: collapse;
+    overflow-y: scroll;
 }
 
 img {
@@ -29,16 +34,12 @@ img {
 }
 
 table {
-    background:rgba(134, 206, 236, 0.7);
-    border-collapse: collapse;
-    table-layout:fixed
 }
 
 tbody {
     height:60vh;
     overflow: auto;
     overflow-x: hidden;
-    overflow-y: scroll;
 }
 
 table,th, td {
