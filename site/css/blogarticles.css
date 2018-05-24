@@ -28,6 +28,7 @@ body {
 .pic {
     width: 50%;
     font-size: 10px;
+    text-align: left;
 }
 
 .picture {
