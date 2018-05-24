@@ -12,17 +12,15 @@ body {
     text-justify-trim: inter-word;
     margin: 0 auto;
     overflow: visible;
-    background-color: #63edb5;
-    color:white;
+    color:black;
 
 }
 
 .text {
-    background-color: #63ed9e;
     padding-left: 5vw;
     padding-right: 5vw;
     padding-bottom: 5vh;
-    color: white;
+    color: black;
 }
 .header {
     text-align: center;
