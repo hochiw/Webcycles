@@ -44,6 +44,17 @@ html {
     .sidebar {
         min-width: 10vw;
     }
+    .quote {
+        display: none;
+    }
+    .logo {
+        position: relative;
+        left: 27vw;
+        min-width: 400%;
+    }
+    .leaderboard-banner {
+        display:none
+    }
 }
 
 
@@ -52,7 +63,7 @@ html {
         grid-row:auto/span 5;
         grid-column: auto/span 4;
         position:relative;
-        box-sizing: border-box;
+        box-sizing: border-box  ;
     }
 }
 
@@ -88,12 +99,6 @@ html {
 .article_excerpt,.quote {
     font-size:12px;
 
-}
-
-@media screen and (max-width: 767px) {
-    .quote {
-        display: none;
-    }
 }
 
 .quote {
