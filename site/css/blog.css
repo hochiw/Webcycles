@@ -20,7 +20,40 @@ html {
     grid-column-gap:10px;
     grid-row-gap: 20px;
     grid-template-columns: repeat(13,1fr);
-    grid-template-rows: repeat(9,minmax(1em,70vh));
+    grid-template-rows: repeat(10,minmax(1em,70vh));
+    overflow-y:scroll;
+}
+
+@media only screen and (max-width: 767px) {
+    .blogs {
+        grid-column: 3/span 10;
+        grid-row: 3/span 8;
+        display: grid;
+        grid-column-gap:10px;
+        grid-row-gap: 20px;
+        grid-template-columns: repeat(13,1fr);
+        grid-template-rows: repeat(35,minmax(1em,70vh));
+        overflow-y:scroll;
+    }
+    .article_block {
+        grid-row: auto/span 6;
+        grid-column: auto/span 10;
+        position: relative;
+        box-sizing: border-box;
+    }
+    .sidebar {
+        min-width: 10vw;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    .article_block {
+        grid-row:auto/span 5;
+        grid-column: auto/span 4;
+        position:relative;
+        box-sizing: border-box;
+    }
 }
 
 .img {
@@ -31,13 +64,6 @@ html {
     border-radius:10px;
 }
 
-
-.article_block {
-    grid-row:auto/span 5;
-    grid-column: auto/span 4;
-    position:relative;
-    box-sizing: border-box;
-}
 
 .article_block:hover {
     opacity:0.8;
@@ -62,6 +88,12 @@ html {
 .article_excerpt,.quote {
     font-size:12px;
 
+}
+
+@media screen and (max-width: 767px) {
+    .quote {
+        display: none;
+    }
 }
 
 .quote {
